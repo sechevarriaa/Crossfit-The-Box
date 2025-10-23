@@ -873,28 +873,6 @@ table td input::placeholder {
     padding: 0.5rem 1rem;
   }
 
-  /* -------------------- MAPA -------------------- */
-.contacto-contenedor {
-  display: flex;
-  flex-direction: column; /* elementos uno debajo del otro */
-}
-
-.contacto-contenedor .formulario {
-  order: 1; /* primero el formulario */
-  width: 100%;
-}
-
-.contacto-contenedor .mapa {
-  order: 2; /* después el mapa */
-  width: 100%;
-  margin-top: 1rem; /* espacio entre formulario y mapa */
-}
-
-.contacto-contenedor .mapa iframe {
-  width: 100%;   /* ajusta el iframe al ancho del móvil */
-  height: 250px; /* altura razonable para móvil */
-}
-
   /* -------------------- FOOTER -------------------- */
   .footer-grid {
     grid-template-columns: 1fr;
