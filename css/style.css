@@ -859,7 +859,7 @@ table {
 
 /* Encabezados (días de la semana) */
 table thead th {
-  font-size: 0.22rem;      /* extremadamente pequeño para caber todo */
+  font-size: 0.4rem;      /* extremadamente pequeño para caber todo */
   line-height: 1.0;
   padding: 0.15rem 0.1rem; /* mínimo espacio interno */
   text-align: center;
@@ -870,7 +870,7 @@ table thead th {
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.18rem;      /* letra muy pequeña para caber palabras largas */
+  font-size: 0.25rem;      /* letra muy pequeña para caber palabras largas */
   line-height: 1.0;
   padding: 0.1rem 0.05rem; /* reduce padding al mínimo */
   text-align: center;
