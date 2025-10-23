@@ -851,24 +851,23 @@ table td input::placeholder {
 
 /* -------------------- TABLAS / HORARIOS -------------------- */
 table {
-  display: block;             /* Evita overflow horizontal */
   width: 100%;
-  table-layout: fixed;        /* Ancho de columnas uniforme */
   border-collapse: collapse;
+  table-layout: fixed;       /* columnas con ancho uniforme */
 }
 
 /* Encabezados (días de la semana) */
 table thead th {
-  font-size: 0.85rem;         /* tamaño legible */
-  padding: 0.4rem 0.2rem;
+  font-size: 0.9rem;         /* grande y legible */
+  padding: 0.5rem 0.3rem;
   text-align: center;
-  white-space: nowrap;         /* evita salto de línea */
+  white-space: nowrap;       /* no se rompe la palabra */
 }
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.55rem;          /* más pequeño que los encabezados */
-  padding: 0.25rem 0.2rem;
+  font-size: 0.6rem;         /* más pequeño para que entre la palabra */
+  padding: 0.3rem 0.2rem;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
@@ -876,10 +875,10 @@ table tbody td {
 
 /* Inputs dentro de las celdas */
 table tbody td input {
-  pointer-events: none;       /* no editable */
+  pointer-events: none;      /* no editable */
   background: transparent;
   color: #fff;
-  font-size: 0.55rem;         /* coincide con el texto de la celda */
+  font-size: 0.6rem;         /* coincide con el texto de la celda */
   width: 100%;
   text-align: center;
   box-sizing: border-box;
