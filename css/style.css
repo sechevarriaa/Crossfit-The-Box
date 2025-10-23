@@ -851,31 +851,39 @@ table td input::placeholder {
 
 /* -------------------- TABLAS / HORARIOS -------------------- */
 table {
-  font-size: 0.6rem;         /* un poco más grande para que se lea */
   display: block;             /* Evita overflow horizontal */
   width: 100%;
-  table-layout: fixed;        /* Ajusta el ancho de las celdas uniformemente */
-  border-collapse: collapse;  /* evita espacios extra */
+  table-layout: fixed;        /* Ancho de columnas uniforme */
+  border-collapse: collapse;
 }
 
-table td {
-  padding: 0.3rem 0.2rem;    /* más padding para que el texto no se corte */
-  overflow: hidden;           /* evita que el texto se salga del td */
-  text-align: center;         /* centra el texto dentro de la celda */
-  white-space: nowrap;        /* evita que se rompa en varias líneas */
+/* Encabezados (días de la semana) */
+table thead th {
+  font-size: 0.85rem;         /* tamaño legible */
+  padding: 0.4rem 0.2rem;
+  text-align: center;
+  white-space: nowrap;         /* evita salto de línea */
 }
 
-table td input {
-  pointer-events: none;       /* Desactiva edición */
-  background: transparent;    /* opcional */
-  color: #fff;                /* legible sobre fondo oscuro */
-  font-size: 0.6rem;          /* coincide con el tamaño de la celda */
-  width: 100%;                /* ocupa toda la celda */
-  text-align: center;         /* centra la palabra */
-  box-sizing: border-box;     /* padding no rompe ancho */
+/* Celdas de horarios */
+table tbody td {
+  font-size: 0.55rem;          /* más pequeño que los encabezados */
+  padding: 0.25rem 0.2rem;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-  }
+/* Inputs dentro de las celdas */
+table tbody td input {
+  pointer-events: none;       /* no editable */
+  background: transparent;
+  color: #fff;
+  font-size: 0.55rem;         /* coincide con el texto de la celda */
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
 
   /* -------------------- BOTONES -------------------- */
   .btn-cta,
