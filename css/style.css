@@ -849,41 +849,45 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-/* -------------------- TABLAS / HORARIOS - MÓVIL -------------------- */
+/* -------------------- TABLAS / HORARIOS - MÓVIL EXTREMO -------------------- */
 table {
   table-layout: fixed;  /* columnas con ancho uniforme */
   width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
 }
 
 /* Encabezados (días de la semana) */
 table thead th {
-  font-size: 0.32rem;       /* un poco más pequeño para móviles */
+  font-size: 0.22rem;      /* extremadamente pequeño para caber todo */
   line-height: 1.0;
-  padding: 0.25rem 0.15rem; /* menos espacio interno */
+  padding: 0.15rem 0.1rem; /* mínimo espacio interno */
   text-align: center;
   white-space: normal;
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.25rem;       /* letra más pequeña para caber */
+  font-size: 0.18rem;      /* letra muy pequeña para caber palabras largas */
   line-height: 1.0;
-  padding: 0.15rem 0.1rem;  /* reduce padding */
+  padding: 0.1rem 0.05rem; /* reduce padding al mínimo */
   text-align: center;
   white-space: normal;
   word-wrap: break-word;
+  overflow-wrap: break-word;
   overflow: hidden;
 }
 
 /* Inputs dentro de las celdas */
 table tbody td input {
-  font-size: 0.25rem;       /* igual que la celda */
+  font-size: 0.18rem;      /* coincide con el tamaño de la celda */
   line-height: 1.0;
   width: 100%;
   text-align: center;
   box-sizing: border-box;
-  pointer-events: none;     /* no editable */
+  pointer-events: none;    /* no editable */
   background: transparent;
   color: #fff;
 }
