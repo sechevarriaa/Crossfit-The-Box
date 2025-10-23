@@ -849,50 +849,48 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-/* -------------------- TABLAS / HORARIOS - MÓVIL LEGIBLE -------------------- */
-@media (max-width: 899px) {
-  table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    font-family: sans-serif;
-  }
-
-  /* Encabezados (días de la semana) */
-  table thead th {
-    font-size: 0.45rem;     /* legible */
-    line-height: 1.1;
-    padding: 0.3rem 0.2rem;
-    text-align: center;
-    white-space: normal;    /* permite saltos de línea */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* Celdas de horarios */
-  table tbody td {
-    font-size: 0.35rem;     /* más pequeño que encabezado pero legible */
-    line-height: 1.1;
-    padding: 0.25rem 0.15rem;
-    text-align: center;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* Inputs dentro de las celdas */
-  table tbody td input {
-    font-size: 0.35rem;     /* coincide con la celda */
-    line-height: 1.1;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    pointer-events: none;   /* no editable */
-    background: transparent;
-    color: #fff;
-  }
+/* -------------------- TABLAS / HORARIOS - MÓVIL EXTREMO -------------------- */
+table {
+  table-layout: fixed;  /* columnas con ancho uniforme */
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
 }
 
+/* Encabezados (días de la semana) */
+table thead th {
+  font-size: 0.8rem;      /* extremadamente pequeño para caber todo */
+  line-height: 1.0;
+  padding: 0.15rem 0.1rem; /* mínimo espacio interno */
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Celdas de horarios */
+table tbody td {
+  font-size: 0.50rem;      /* letra muy pequeña para caber palabras largas */
+  line-height: 1.0;
+  padding: 0.3rem 0.15rem; /* reduce padding al mínimo */
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+/* Inputs dentro de las celdas */
+table tbody td input {
+  font-size: 0.18rem;      /* coincide con el tamaño de la celda */
+  line-height: 1.0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  pointer-events: none;    /* no editable */
+  background: transparent;
+  color: #fff;
+}
 
 
 
