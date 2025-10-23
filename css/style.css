@@ -849,21 +849,32 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-  /* -------------------- TABLAS / HORARIOS -------------------- */
-  table {
-    font-size: 0.2rem;
-    display: block;        /* Evita overflow */
-    width: 100%;
-  }
+/* -------------------- TABLAS / HORARIOS -------------------- */
+table {
+  font-size: 0.6rem;         /* un poco más grande para que se lea */
+  display: block;             /* Evita overflow horizontal */
+  width: 100%;
+  table-layout: fixed;        /* Ajusta el ancho de las celdas uniformemente */
+  border-collapse: collapse;  /* evita espacios extra */
+}
 
-  table td {
-    padding: 0.2rem;
-  }
+table td {
+  padding: 0.3rem 0.2rem;    /* más padding para que el texto no se corte */
+  overflow: hidden;           /* evita que el texto se salga del td */
+  text-align: center;         /* centra el texto dentro de la celda */
+  white-space: nowrap;        /* evita que se rompa en varias líneas */
+}
 
-  table td input {
-    pointer-events: none; /* Desactiva interacción táctil */
-    background: transparent; /* Opcional: se ve como texto */
-    color: #fff;            /* Mantener color legible */
+table td input {
+  pointer-events: none;       /* Desactiva edición */
+  background: transparent;    /* opcional */
+  color: #fff;                /* legible sobre fondo oscuro */
+  font-size: 0.6rem;          /* coincide con el tamaño de la celda */
+  width: 100%;                /* ocupa toda la celda */
+  text-align: center;         /* centra la palabra */
+  box-sizing: border-box;     /* padding no rompe ancho */
+}
+
   }
 
   /* -------------------- BOTONES -------------------- */
