@@ -738,7 +738,6 @@ table td input::placeholder {
 
   /* -------------------- ENTRENAMIENTOS -------------------- */
   .entrenamientos-grid {
-    display: flex;
     flex-direction: column; /* Columna para móviles */
     align-items: center;
     width: 100%;
