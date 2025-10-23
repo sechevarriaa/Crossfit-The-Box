@@ -852,7 +852,7 @@ table td input::placeholder {
 /* -------------------- TABLAS / HORARIOS - MÓVIL EXTREMO -------------------- */
 table {
   table-layout: fixed;  /* columnas con ancho uniforme */
-  width: 80%;
+  width: 95%;
   border-collapse: collapse;
   font-family: sans-serif;
 }
