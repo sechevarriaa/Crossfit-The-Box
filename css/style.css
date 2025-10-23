@@ -861,7 +861,9 @@ table td input::placeholder {
   }
 
   table td input {
-    font-size: 0.6rem;
+    pointer-events: none; /* Desactiva interacción táctil */
+    background: transparent; /* Opcional: se ve como texto */
+    color: #fff;            /* Mantener color legible */
   }
 
   /* -------------------- BOTONES -------------------- */
