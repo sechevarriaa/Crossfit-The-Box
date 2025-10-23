@@ -738,25 +738,26 @@ table td input::placeholder {
 
 /* -------------------- ENTRENAMIENTOS -------------------- */
 .entrenamientos-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Una columna en móviles */
-  gap: 1rem;
+  display: flex;              /* Igual que noticias */
+  flex-direction: column;     /* Columna en móviles */
+  align-items: center;        /* Centra cada card */
   width: 100%;
-  justify-items: center; /* Centra cada card */
+  gap: 1rem;
 }
 
 .entrenamientos-grid .card {
-  width: 100%;
-  max-width: 320px; /* No se hace más grande que el móvil */
+  width: 100%;                /* Ocupa todo el ancho disponible */
+  max-width: 320px;           /* Igual que noticias */
+  margin: 0 auto;
 }
 
 .entrenamientos-grid h3 {
-  font-size: 1.1rem; /* Más compacto */
+  font-size: 1.1rem;
   text-align: center;
 }
 
 .entrenamientos-grid p {
-  font-size: 0.85rem; /* Ajuste para móviles */
+  font-size: 0.85rem;
   text-align: center;
 }
 
