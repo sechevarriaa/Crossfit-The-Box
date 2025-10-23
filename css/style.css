@@ -849,7 +849,7 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-/* -------------------- TABLAS / HORARIOS -------------------- */
+//* -------------------- TABLAS / HORARIOS -------------------- */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -858,33 +858,46 @@ table {
 
 /* Encabezados (días de la semana) */
 table thead th {
-  font-size: 0.4rem;         /* un poco más pequeño para que no se solapen */
-  padding: 0.4rem 0.2rem;    /* reduce espacio interno */
+  font-size: 0.35rem;        /* tamaño más reducido */
+  line-height: 1.1;           /* ajusta la altura de línea */
+  padding: 0.3rem 0.2rem;     /* espacio interno */
   text-align: center;
-  white-space: normal;        /* permite que la palabra se divida si es muy larga */
-  word-wrap: break-word;      /* fuerza el salto de línea si hace falta */
+  white-space: normal;         /* permite dividir palabra */
+  word-wrap: break-word;       /* fuerza salto de línea */
+}
+
+/* Inputs dentro del encabezado si los hay */
+table thead th input {
+  font-size: 0.35rem;
+  line-height: 1.1;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.35rem;        /* más pequeño para que entren las palabras */
-  padding: 0.25rem 0.2rem;
+  font-size: 0.3rem;          /* más pequeño */
+  line-height: 1.1;
+  padding: 0.2rem 0.15rem;
   text-align: center;
   overflow: hidden;
-  white-space: normal;        /* permite que las palabras se ajusten */
+  white-space: normal;         /* permite dividir palabra */
   word-wrap: break-word;
 }
 
 /* Inputs dentro de las celdas */
 table tbody td input {
-  pointer-events: none;      /* no editable */
+  pointer-events: none;        /* no editable */
   background: transparent;
   color: #fff;
-  font-size: 0.35rem;        /* coincide con el texto de la celda */
+  font-size: 0.3rem;           /* coincide con la celda */
+  line-height: 1.1;
   width: 100%;
   text-align: center;
   box-sizing: border-box;
 }
+
 
 
   /* -------------------- BOTONES -------------------- */
