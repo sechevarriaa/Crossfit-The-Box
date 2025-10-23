@@ -1,0 +1,127 @@
+<!--
+  Módulo: Desarrollo Web - LMSGI02
+  Tarea: Tarea evaluativa - Sitio web "The Box" (Versión entregable)
+  UD: Desarrollo web con HTML5 y CSS3
+  Autor: Saioa Echevarria Ballesteros
+  Fecha: 20/10/2025
+-->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrenamientos - The Box</title>
+  <meta name="description" content="Tipos de entrenamiento en The Box">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<!-- Header principal con logo, nombre y menú de navegación del sitio -->
+<header class="site-header">
+  <section class="header-inner container">
+    <img src="images/logo.png" alt="Logo The Box" class="logo">
+    <section class="brand-text">
+      <h1>Crossfit The Box</h1>
+      <p>Esfuerzo - Constancia - Superación</p>
+    </section>
+    <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="entrenamientos.html" class="active">Entrenamientos</a></li>
+        <li><a href="wod.html">WOD de la semana</a></li>
+        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<!-- ================= MAIN ================= -->
+<!-- Sección principal que contiene todos los entrenamientos ofrecidos -->
+<!-- Sección con grid de tarjetas con los distintos tipos de entrenamientos -->
+<main class="container">
+  <h2 class="section-title">Nuestros entrenamientos</h2>
+
+  <section class="entrenamientos-grid">
+
+    <article class="card">
+      <h3>WOD</h3>
+      <p>El entrenamiento del día es una sesión diferente cada jornada. Diseñada para trabajar fuerza, resistencia, velocidad y coordinación.<br>
+      Adaptable a todos los niveles.</p>
+    </article>
+
+    <aside class="btn-wod-container">
+      <a href="wod.html" class="btn-cta">Ver WOD de la semana</a>
+    </aside>
+
+    <article class="card">
+      <h3>Open Gym</h3>
+      <p>Espacio libre para entrenar por tu cuenta fuera de las clases dirigidas.<br>
+      Ideal para practicar movimientos, mejorar tus marcas o repetir el WOD a tu ritmo.</p>
+    </article>
+
+    <article class="card">
+      <h3>Halterofilia</h3>
+      <p>Sesiones centradas en perfeccionar la técnica de los levantamientos olímpicos:<br>
+         - Snatch, Clean & Jerk<br>
+         Se trabaja la coordinación, la potencia y la postura.</p>
+    </article>
+
+    <article class="card">
+      <h3>Gimnásticos</h3>
+      <p>Clases dedicadas a dominar los movimientos con el peso corporal:<br>
+         - Pull ups, Toes to Bar, Muscle-ups, pinos y más<br>
+         Mejora la fuerza, el control y la movilidad.</p>
+    </article>
+
+    <article class="card">
+      <h3>Hyrox</h3>
+      <p>Entrenamiento funcional orientado a la resistencia y el rendimiento.<br>
+      Perfecto para quienes buscan un reto completo.<br>
+      Clases especiales para competidores.</p>
+    </article>
+
+  </section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<!--  Información de contacto (dirección, teléfono, email)
+      Enlaces rápidos a todas las secciones
+      Enlaces a redes sociales -->
+<footer class="site-footer">
+  <section class="footer-grid container">
+    <section>
+      <strong>The Box</strong><br>
+      C/ Gran Vía 23, Bilbao<br>
+      Tel: <a href="tel:+34600111222">600 111 222</a><br>
+      Email: <a href="mailto:crossfitthebox@gmail.com">crossfitthebox@gmail.com</a>
+    </section>
+
+    <nav>
+      <h4>Enlaces</h4>
+      <ul style="list-style:none;margin-top:.5rem;padding-left:0">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="wod.html">WOD de la semana</a></li>
+        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h4>Síguenos</h4>
+      <p>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> · 
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </p>
+    </section>
+  </section>
+</footer>
+
+</body>
+</html>
