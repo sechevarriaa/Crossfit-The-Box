@@ -858,7 +858,7 @@ table {
 
 /* Encabezados (días de la semana) */
 table thead th {
-  font-size: 0.9rem;         /* grande y legible */
+  font-size: 0.6rem;         /* grande y legible */
   padding: 0.5rem 0.3rem;
   text-align: center;
   white-space: nowrap;       /* no se rompe la palabra */
