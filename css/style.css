@@ -736,27 +736,30 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-  /* -------------------- ENTRENAMIENTOS -------------------- */
-  .entrenamientos-grid {
-    flex-direction: column; /* Columna para móviles */
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-  }
+/* -------------------- ENTRENAMIENTOS -------------------- */
+.entrenamientos-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móviles */
+  gap: 1rem;
+  width: 100%;
+  justify-items: center; /* Centra cada card */
+}
 
-  .entrenamientos-grid .card {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
+.entrenamientos-grid .card {
+  width: 100%;
+  max-width: 320px; /* No se hace más grande que el móvil */
+}
 
-  .entrenamientos-grid h3 {
-    font-size: 1.2rem;
-  }
+.entrenamientos-grid h3 {
+  font-size: 1.1rem; /* Más compacto */
+  text-align: center;
+}
 
-  .entrenamientos-grid p {
-    font-size: 0.9rem;
-  }
+.entrenamientos-grid p {
+  font-size: 0.85rem; /* Ajuste para móviles */
+  text-align: center;
+}
+
 
  /* -------------------- WOD DE LA SEMANA -------------------- */
 .wod-contenido {
@@ -847,7 +850,7 @@ table td input::placeholder {
 
   /* -------------------- TABLAS / HORARIOS -------------------- */
   table {
-    font-size: 0.6rem;
+    font-size: 0.4rem;
     display: block;        /* Evita overflow */
     width: 100%;
   }
@@ -857,7 +860,7 @@ table td input::placeholder {
   }
 
   table td input {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   /* -------------------- BOTONES -------------------- */
