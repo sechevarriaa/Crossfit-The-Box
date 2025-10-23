@@ -858,19 +858,21 @@ table {
 
 /* Encabezados (días de la semana) */
 table thead th {
-  font-size: 0.6rem;         /* grande y legible */
-  padding: 0.5rem 0.3rem;
+  font-size: 0.5rem;         /* un poco más pequeño para que no se solapen */
+  padding: 0.4rem 0.2rem;    /* reduce espacio interno */
   text-align: center;
-  white-space: nowrap;       /* no se rompe la palabra */
+  white-space: normal;        /* permite que la palabra se divida si es muy larga */
+  word-wrap: break-word;      /* fuerza el salto de línea si hace falta */
 }
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.4rem;         /* más pequeño para que entre la palabra */
-  padding: 0.3rem 0.2rem;
+  font-size: 0.35rem;        /* más pequeño para que entren las palabras */
+  padding: 0.25rem 0.2rem;
   text-align: center;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;        /* permite que las palabras se ajusten */
+  word-wrap: break-word;
 }
 
 /* Inputs dentro de las celdas */
@@ -878,11 +880,12 @@ table tbody td input {
   pointer-events: none;      /* no editable */
   background: transparent;
   color: #fff;
-  font-size: 0.6rem;         /* coincide con el texto de la celda */
+  font-size: 0.35rem;        /* coincide con el texto de la celda */
   width: 100%;
   text-align: center;
   box-sizing: border-box;
 }
+
 
   /* -------------------- BOTONES -------------------- */
   .btn-cta,
