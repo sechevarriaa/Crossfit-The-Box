@@ -849,53 +849,43 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-//* -------------------- TABLAS / HORARIOS -------------------- */
+/* -------------------- TABLAS / HORARIOS - MÓVIL -------------------- */
 table {
+  table-layout: fixed;  /* columnas con ancho uniforme */
   width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;       /* columnas con ancho uniforme */
 }
 
 /* Encabezados (días de la semana) */
 table thead th {
-  font-size: 0.35rem;        /* tamaño más reducido */
-  line-height: 1.1;           /* ajusta la altura de línea */
-  padding: 0.3rem 0.2rem;     /* espacio interno */
+  font-size: 0.32rem;       /* un poco más pequeño para móviles */
+  line-height: 1.0;
+  padding: 0.25rem 0.15rem; /* menos espacio interno */
   text-align: center;
-  white-space: normal;         /* permite dividir palabra */
-  word-wrap: break-word;       /* fuerza salto de línea */
-}
-
-/* Inputs dentro del encabezado si los hay */
-table thead th input {
-  font-size: 0.35rem;
-  line-height: 1.1;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.25rem;          /* más pequeño */
-  line-height: 1.1;
-  padding: 0.2rem 0.15rem;
+  font-size: 0.25rem;       /* letra más pequeña para caber */
+  line-height: 1.0;
+  padding: 0.15rem 0.1rem;  /* reduce padding */
   text-align: center;
-  overflow: hidden;
-  white-space: normal;         /* permite dividir palabra */
+  white-space: normal;
   word-wrap: break-word;
+  overflow: hidden;
 }
 
 /* Inputs dentro de las celdas */
 table tbody td input {
-  pointer-events: none;        /* no editable */
-  background: transparent;
-  color: #fff;
-  font-size: 0.3rem;           /* coincide con la celda */
-  line-height: 1.1;
+  font-size: 0.25rem;       /* igual que la celda */
+  line-height: 1.0;
   width: 100%;
   text-align: center;
   box-sizing: border-box;
+  pointer-events: none;     /* no editable */
+  background: transparent;
+  color: #fff;
 }
 
 
