@@ -851,9 +851,9 @@ table td input::placeholder {
 
   /* -------------------- TABLAS / HORARIOS -------------------- */
   table {
-    font-size: 0.4rem;
+    font-size: 0.2rem;
     display: block;        /* Evita overflow */
-    width: 75%;
+    width: 100%;
   }
 
   table td {
