@@ -680,7 +680,7 @@ table td input::placeholder {
 /* Ajustes para pantallas menores a 900px
    Elementos: header, navegación, hero, imágenes, textos, grid de coaches y noticias, grid de entrenamientos */
 @media(max-width:899px){
-  .site-header { position: static; }
+  .site-header {position: static; }
   .header-inner { flex-direction: column; align-items: center; }
   .main-nav ul { flex-direction: column; gap: 0.5rem; }
   .hero-content { flex-direction: column; }
