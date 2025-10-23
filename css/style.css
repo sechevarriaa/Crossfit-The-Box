@@ -820,7 +820,7 @@ table td input::placeholder {
 
   .avanzado-con-gif-boton {
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     margin-left: 0;
   }
 
@@ -866,7 +866,7 @@ table thead th {
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.6rem;         /* más pequeño para que entre la palabra */
+  font-size: 0.4rem;         /* más pequeño para que entre la palabra */
   padding: 0.3rem 0.2rem;
   text-align: center;
   overflow: hidden;
