@@ -877,7 +877,7 @@ table thead th input {
 
 /* Celdas de horarios */
 table tbody td {
-  font-size: 0.3rem;          /* más pequeño */
+  font-size: 0.25rem;          /* más pequeño */
   line-height: 1.1;
   padding: 0.2rem 0.15rem;
   text-align: center;
