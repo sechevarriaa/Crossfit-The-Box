@@ -679,23 +679,119 @@ table td input::placeholder {
 /* -------------------- RESPONSIVE -------------------- */
 /* Ajustes para pantallas menores a 900px
    Elementos: header, navegación, hero, imágenes, textos, grid de coaches y noticias, grid de entrenamientos */
-@media(max-width:899px){
-  .site-header {position: static; }
-  .header-inner { flex-direction: column; align-items: center; }
-  .main-nav ul { flex-direction: column; gap: 0.5rem; }
-  .hero-content { flex-direction: column; }
-  .hero-img, .hero-text { width: 100%; max-width: 400px; }
-  .hero h2 { font-size: 2.2rem; }
-  .hero-text p { font-size: 1rem; }
-  .brand-text h1 { font-size: 4rem; }
-  .brand-text p { font-size: 1.2rem; }
-  .coach img { width: 140px; height: 140px; }
-  .news-item { flex-direction: column; align-items: center; text-align: center; }
-  .news-img { width: 100%; max-width: 400px; }
-  .news-text h3 { font-size: 1.5rem; }
-  .news-text p { font-size: 1rem; }
-  .entrenamientos-grid { 
-    grid-template-columns: 1fr; 
-    grid-template-rows: repeat(6, auto); 
+@media (max-width: 899px) {
+  /* Header y navegación */
+  .site-header {
+    position: static; /* No se queda anclado en móviles */
   }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  /* Sección Hero */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero-img,
+  .hero-text {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  /* Marca principal */
+  .brand-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .brand-text p {
+    font-size: 1rem;
+  }
+
+  /* Entrenadores / Coaches */
+  .coach img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .coach h3 {
+    font-size: 1rem;
+  }
+
+  /* Noticias */
+  .news-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+  }
+
+  .news-img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .news-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .news-text p {
+    font-size: 0.9rem;
+  }
+
+  /* Tabla / Entrenamientos */
+  .entrenamientos-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    gap: 1rem;
+  }
+
+  .entrenamientos-grid h3 {
+    font-size: 1.1rem;
+  }
+
+  .entrenamientos-grid p {
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  footer h4 {
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}
+
 }
