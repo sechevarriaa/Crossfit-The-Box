@@ -864,9 +864,6 @@ table thead th {
   padding: 0.15rem 0.1rem; /* mínimo espacio interno */
   text-align: center;
   white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
 
 /* Celdas de horarios */
 table tbody td {
