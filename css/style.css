@@ -853,7 +853,7 @@ table td input::placeholder {
   table {
     font-size: 0.4rem;
     display: block;        /* Evita overflow */
-    width: 100%;
+    width: 75%;
   }
 
   table td {
