@@ -680,25 +680,38 @@ table td input::placeholder {
 /* Ajustes para pantallas menores a 900px
    Elementos: header, navegación, hero, imágenes, textos, grid de coaches y noticias, grid de entrenamientos */
 @media (max-width: 899px) {
+  /* Ajuste global para eliminar scroll lateral */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+  }
+
   /* Header y navegación */
   .site-header {
     position: static; /* No se queda anclado en móviles */
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .header-inner {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    width: 100%;
   }
 
   .main-nav ul {
     flex-direction: column;
     gap: 0.3rem;
+    padding: 0;
+    margin: 0;
   }
 
   .main-nav a {
     font-size: 0.9rem;
     padding: 0.3rem 0.6rem;
+    display: block;
+    text-align: center;
   }
 
   /* Sección Hero */
@@ -712,6 +725,7 @@ table td input::placeholder {
   .hero-text {
     width: 100%;
     max-width: 320px;
+    margin: 0 auto;
   }
 
   .hero h2 {
@@ -752,6 +766,7 @@ table td input::placeholder {
   .news-img {
     width: 100%;
     max-width: 320px;
+    height: auto;
   }
 
   .news-text h3 {
@@ -767,6 +782,8 @@ table td input::placeholder {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, auto);
     gap: 1rem;
+    width: 100%;
+    overflow-x: auto; /* permite desplazamiento solo si fuera necesario */
   }
 
   .entrenamientos-grid h3 {
@@ -781,10 +798,12 @@ table td input::placeholder {
     width: 100%;
     font-size: 0.85rem;
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
-  th,
-  td {
+  th, td {
     padding: 0.4rem;
     text-align: center;
   }
@@ -795,6 +814,8 @@ table td input::placeholder {
     align-items: center;
     text-align: center;
     gap: 0.8rem;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   footer h4 {
@@ -855,15 +876,19 @@ table td input::placeholder {
 
     body {
       font-size: 0.9rem;
-      overflow-x: hidden; /* Evita el scroll lateral */
+      overflow-x: hidden;
     }
 
-    img {
+    img, video {
       max-width: 100%;
       height: auto;
+      display: block;
+    }
+
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      box-sizing: border-box;
     }
   }
-}
-
-
 }
