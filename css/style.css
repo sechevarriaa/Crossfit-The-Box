@@ -380,7 +380,6 @@ body {
 .video video {
   width: 100%;
   height: 100%;
-  max-height: 350px;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -902,7 +901,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  border-collapse: collapse !important;
   }
 
 table th {
@@ -919,11 +917,11 @@ table td {
   background-color: #000;
   font-size: 0.9rem;
   white-space: nowrap;
-  font-size: 0.35rem 
-  line-height: 1 
-  white-space: nowrap 
-  overflow: hidden 
-  text-overflow: ellipsis
+  font-size: 0.35rem;
+  line-height: 1;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
   } 
 
 table td input {
@@ -971,7 +969,7 @@ table td input::placeholder {
     background-color: #0b0f12;
     transition: right 0.3s ease;
     z-index: 7000;
-    padding-top: 3rem
+    padding-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1025,7 +1023,7 @@ table td input::placeholder {
   }
 }
 
-/* -------------------- BOTÓN DE MENÚ -------------------- */
+/* -------------------- BOTÓN DE MENÚ EN ESCRITORIO -------------------- */
 /* En la versión de escritorio no aparece el botón de menú*/
 @media (min-width: 1200px) {
   .menu-toggle {
