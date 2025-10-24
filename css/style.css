@@ -891,7 +891,6 @@ table td input::placeholder {
     font-size: 0.85rem;
   }
 }
-
 /* -------------------- MENÚ HAMBURGUESA MÓVIL -------------------- */
 @media (max-width: 899px) {
 
@@ -928,36 +927,47 @@ table td input::placeholder {
     padding: 0.5rem 0;
   }
 }
-
-/* -------------------- TABLA / HORARIOS (Versión móvil) -------------------- */
+/* ==========================================================
+   TABLA / HORARIOS - Versión Heracrossfit (ajustada a The Box)
+   ========================================================== */
 @media (max-width: 480px) {
+   .tabla-horarios {
+  position: relative; /* asegura que z-index funcione */
+  z-index: 1;         /* menor que el menú */
+}
 
-  .tabla-horarios {
-    position: relative;
-    z-index: 1; /* por debajo del menú */
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* columnas de tamaño uniforme */
+  border-collapse: collapse !important;
+}
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-  }
+table th,
+table td {
+  text-align: center;
+  padding: 0.6rem;
+  border: 1px solid #333;
+  color: #fff;
+  background-color: #111;
+  font-size: 0.9rem;
+  white-space: nowrap; /* no partir palabras */
+  font-size: 0.35rem !important;   /* reduce mucho la letra */
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;  /* no partir palabras */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
 
-  table th {
-    background-color: #c00;
-    color: #fff;
-    font-weight: 700;
-  }
-  table td {
-    text-align: center;
-    padding: 0.4rem;
-    border: 1px solid #333;
-    color: #fff;
-    background-color: #111;
-    font-size: 0.35rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* Encabezado */
+table th {
+  background-color: #c00;
+  color: #fff;
+  font-weight: 700;
   }
 }
+
+
+
 
