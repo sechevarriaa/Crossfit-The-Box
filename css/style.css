@@ -681,11 +681,13 @@ table td input::placeholder {
 .site-footer a { color:#e63946; text-decoration:none; }
 
 /* -------------------- RESPONSIVE MÓVIL -------------------- */
+/* Contiene la configuración necesario de cada sección para que se vean correctamente en moviles y tablets */
+
 @media (max-width: 899px) {
 
   /* -------------------- HEADER Y NAVEGACIÓN -------------------- */
   .site-header {
-    position: static; /* No se queda anclado */
+    position: static;
     padding: 0.5rem 1rem;
   }
 
@@ -740,6 +742,26 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
+  /* -------------------- NOTICIAS -------------------- */
+  .news-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+  }
+
+  .news-img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .news-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .news-text p {
+    font-size: 0.9rem;
+  }
   /* -------------------- ENTRENAMIENTOS -------------------- */
   .entrenamientos-grid {
     display: flex;              
@@ -830,25 +852,16 @@ table td input::placeholder {
     width: 80px;
   }
 
-  /* -------------------- NOTICIAS -------------------- */
-  .news-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.6rem;
+  /* -------------------- CONTACTO -------------------- */
+.contacto-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   }
 
-  .news-img {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .news-text h3 {
-    font-size: 1.2rem;
-  }
-
-  .news-text p {
-    font-size: 0.9rem;
+.contacto-grid .mapa iframe {
+  width: 100%;
+  height: 450px;
   }
 
   /* -------------------- BOTONES -------------------- */
@@ -857,20 +870,6 @@ table td input::placeholder {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
   }
-
-  /* -------------------- CONTACTO -------------------- */
-  /* Contacto: formulario arriba, mapa debajo en móviles y desktop */
-.contacto-grid {
-  display: flex;
-  flex-direction: column; /* Coloca los elementos uno debajo de otro */
-  gap: 2rem; /* Espacio entre formulario y mapa */
-}
-
-.contacto-grid .mapa iframe {
-  width: 100%;  /* Ocupa todo el ancho */
-  height: 450px; /* Ajusta la altura del mapa */
-}
-
   /* -------------------- FOOTER -------------------- */
   .footer-grid {
     grid-template-columns: 1fr;
@@ -891,21 +890,20 @@ table td input::placeholder {
   }
 }
 
-/* ==========================================================
-   TABLA / HORARIOS - Versión Heracrossfit (ajustada a The Box)
-   ========================================================== */
+/* -------------------- HORRAIOS Y TARIFAS -------------------- */
+/* Necesita otra medida especifoca para moviles para que se pueda leer sin problema*/
 @media (max-width: 480px) {
 .tabla-horarios {
-  position: relative; /* asegura que z-index funcione */
-  z-index: 1;         /* menor que el menú */
-}
+  position: relative;
+  z-index: 1;
+  }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* columnas de tamaño uniforme */
+  table-layout: fixed;
   border-collapse: collapse !important;
-}
+  }
 
 table th {
   background-color: #111;
@@ -920,12 +918,12 @@ table td {
   text-align: center;
   background-color: #000;
   font-size: 0.9rem;
-  white-space: nowrap; /* no partir palabras */
-  font-size: 0.35rem !important;   /* reduce mucho la letra */
-  line-height: 1 !important;
-  white-space: nowrap !important;  /* no partir palabras */
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  white-space: nowrap;
+  font-size: 0.35rem 
+  line-height: 1 
+  white-space: nowrap 
+  overflow: hidden 
+  text-overflow: ellipsis
   } 
 
 table td input {
@@ -942,9 +940,10 @@ table td input::placeholder {
   }
 }
 
-/* ===================== MÓVIL Y TABLET ===================== */
+/* -------------------- BOTÓN DE MENÚ -------------------- */
+/* Botón desplegable con el menú que aparece sólo en moviles y tablets */
 @media (max-width: 1199px) {
-  /* Botón hamburguesa visible */
+
   .menu-toggle {
     display: block;
     font-size: 3rem;
@@ -953,17 +952,15 @@ table td input::placeholder {
     border: none;
     cursor: pointer;
     position: relative;
-    z-index: 500; /* Muy por encima del fondo y la tabla */
+    z-index: 500;
   }
 
-  /* Alineación del header */
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  /* Menú lateral desplegable */
   .main-nav {
     position: fixed;
     top: 0;
@@ -971,17 +968,27 @@ table td input::placeholder {
     width: 60%;
     max-width: 320px;
     height: 100%;
-    background-color: #0b0f12; /* 🔥 Fondo negro sólido */
+    background-color: #0b0f12;
     transition: right 0.3s ease;
-    z-index: 7000; /* justo debajo del botón */
+    z-index: 7000;
     padding-top: 3rem
     display: flex;
     flex-direction: column;
     align-items: center;
     }
 
+  .main-nav.open {
+    right: 0;
+    }
 
-  /* Enlaces del menú */
+  body.menu-abierto::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 6500;
+  }
+
   .main-nav ul {
     list-style: none;
     background-color: #0b0f12;
@@ -1000,7 +1007,7 @@ table td input::placeholder {
     text-decoration: none;
     display: block;
     padding: 0.7rem 0;
-    z-index: 7002; /* Enlaces clicables */
+    z-index: 7002;
     position: relative;
   }
 
@@ -1008,38 +1015,20 @@ table td input::placeholder {
     background-color: #e50914;
   }
 
-  /* 🔥 La tabla queda debajo del menú */
   .tabla-horarios {
     position: relative;
     z-index: 1;
   }
 
-  /* Evita que el resto de la página reciba clics cuando el menú está abierto */
   body.menu-abierto main {
     pointer-events: none;
   }
 }
 
-/* ===================== ESCRITORIO ===================== */
+/* -------------------- BOTÓN DE MENÚ -------------------- */
+/* En la versión de escritorio no aparece el botón de menú*/
 @media (min-width: 1200px) {
   .menu-toggle {
     display: none;
-  }
-
-  .main-nav {
-    position: static;
-    background: none;
-    height: auto;
-    width: auto;
-  }
-
-  .main-nav ul {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .main-nav ul li a {
-    color: #fff;
-    font-size: 1rem;
   }
 }
