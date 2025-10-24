@@ -736,64 +736,62 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-/* -------------------- ENTRENAMIENTOS -------------------- */
-.entrenamientos-grid {
-  display: flex;              /* Igual que noticias */
-  flex-direction: column;     /* Columna en móviles */
-  align-items: center;        /* Centra cada card */
-  width: 100%;
-  gap: 1rem;
-}
+  /* -------------------- ENTRENAMIENTOS -------------------- */
+  .entrenamientos-grid {
+    display: flex;              
+    flex-direction: column;     
+    align-items: center;        
+    width: 100%;
+    gap: 1rem;
+  }
 
-.entrenamientos-grid .card {
-  width: 100%;                /* Ocupa todo el ancho disponible */
-  max-width: 320px;           /* Igual que noticias */
-  margin: 0 auto;
-}
+  .entrenamientos-grid .card {
+    width: 100%;                
+    max-width: 320px;           
+    margin: 0 auto;
+  }
 
-.entrenamientos-grid h3 {
-  font-size: 1.1rem;
-  text-align: center;
-}
+  .entrenamientos-grid h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
 
-.entrenamientos-grid p {
-  font-size: 0.85rem;
-  text-align: center;
-}
+  .entrenamientos-grid p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
 
+  /* -------------------- WOD DE LA SEMANA -------------------- */
+  .wod-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+  }
 
- /* -------------------- WOD DE LA SEMANA -------------------- */
-.wod-contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* cambia de center a flex-start */
-  width: 100%;
-  gap: 1rem;
-}
+  .wod-descripcion,
+  .video {
+    width: 100%;
+    max-width: 320px;
+    margin: 0;
+    text-align: left;
+  }
 
-.wod-descripcion,
-.video {
-  width: 100%;
-  max-width: 320px;
-  margin: 0; /* elimina el auto para que no se centre */
-  text-align: left; /* alinea texto a la izquierda */
-}
+  .wod-descripcion h3 {
+    font-size: 1.4rem;
+  }
 
-.wod-descripcion h3 {
-  font-size: 1.4rem;
-}
+  .wod-descripcion ul {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+  }
 
-.wod-descripcion ul {
-  font-size: 0.85rem;
-  padding-left: 1rem;
-}
-
-.video video {
-  max-width: 100%;
-  max-height: 250px;
-  height: auto;
-}
-
+  .video video {
+    max-width: 100%;
+    max-height: 250px;
+    height: auto;
+  }
 
   /* -------------------- COACHES -------------------- */
   .coach-contenedor {
@@ -849,29 +847,6 @@ table td input::placeholder {
     font-size: 0.9rem;
   }
 
-/* -------------------- TABLAS / HORARIOS - MÓVIL EXTREMO -------------------- */
-/* -------------------- VERSIÓN MÓVIL -------------------- */
-@media (max-width: 480px) {
-  table thead th {
-    font-size: 0.6rem;       /* más pequeño para móviles */
-    padding: 0.1rem 0.05rem; /* aún menos espacio interno */
-    line-height: 0.9;
-    word-break: break-word;  /* permite dividir palabras largas */
-  }
-
-  table td {
-    font-size: 0.65rem;      /* reduce también el texto de las celdas */
-    padding: 0.2rem 0.1rem;
-  }
-
-  table {
-    table-layout: fixed;     /* fuerza a que las columnas se mantengan proporcionales */
-  }
-}
-
-
-
-
   /* -------------------- BOTONES -------------------- */
   .btn-cta,
   .btn-reserva {
@@ -896,5 +871,24 @@ table td input::placeholder {
 
   footer p {
     font-size: 0.85rem;
+  }
+}
+
+/* -------------------- TABLAS / HORARIOS - MÓVIL EXTREMO -------------------- */
+@media (max-width: 480px) {
+  table thead th {
+    font-size: 0.6rem;        /* más pequeño para móviles */
+    padding: 0.1rem 0.05rem;  /* aún menos espacio interno */
+    line-height: 0.9;
+    word-break: break-word;   /* permite dividir palabras largas */
+  }
+
+  table td {
+    font-size: 0.65rem;       /* reduce también el texto de las celdas */
+    padding: 0.2rem 0.1rem;
+  }
+
+  table {
+    table-layout: fixed;      /* fuerza a que las columnas se mantengan proporcionales */
   }
 }
