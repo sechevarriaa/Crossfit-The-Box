@@ -907,33 +907,32 @@ table th {
   font-weight: 700;
 }
 
-/* ===================== MÓVIL ===================== */
-@media (max-width: 600px) {
+/* ==========================================================
+   TABLA / HORARIOS - MÓVIL SIN SCROLL
+   ========================================================== */
+@media (max-width: 480px) {
 
-  .tabla-horarios {
-    overflow-x: auto;
-    display: block;
+  table {
+    width: 100% !important;
+    table-layout: fixed !important; /* columnas de tamaño uniforme */
+    border-collapse: collapse !important;
   }
 
   table th,
   table td {
-    font-size: 0.55rem;      /* reduce el texto */
-    padding: 0.3rem 0.2rem;  /* menos espacio interno */
-    line-height: 1.2;
+    font-size: 0.35rem !important;   /* reduce mucho la letra */
+    padding: 0.2rem !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;  /* no partir palabras */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
-  table {
-    min-width: 550px;        /* fuerza scroll lateral si no cabe */
-  }
-
-  /* Scrollbar personalizado */
-  .tabla-horarios::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .tabla-horarios::-webkit-scrollbar-thumb {
-    background: #c00;
-    border-radius: 3px;
+  /* Opcional: forzar que el texto completo se vea reduciendo la letra */
+  table th {
+    font-weight: 700 !important;
   }
 }
+
 
