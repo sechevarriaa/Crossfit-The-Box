@@ -874,24 +874,35 @@ table td input::placeholder {
   }
 }
 
-/* -------------------- FORZAR TABLA EN MÓVILES -------------------- */
+/* ==========================================================
+   CORRECCIÓN VISUAL TABLAS / HORARIOS - MÓVIL (≤480px)
+   ========================================================== */
 @media (max-width: 480px) {
+
+  /* Tabla ajustable en pantallas pequeñas */
+  table {
+    display: block;               /* permite scroll horizontal */
+    overflow-x: auto;
+    width: 100%;
+    table-layout: fixed !important;
+  }
+
+  /* Encabezados (días de la semana) */
   table thead th {
-    font-size: 0.55rem !important;  /* fuerza tamaño más pequeño */
-    padding: 0.05rem !important;
+    font-size: 0.55rem !important;   /* tamaño más pequeño */
+    padding: 0.05rem !important;     /* espacio mínimo */
     line-height: 0.9 !important;
-    white-space: normal !important;
+    text-align: center !important;
+    white-space: normal !important;  /* permite varias líneas */
     word-break: break-word !important;
   }
 
+  /* Celdas de los horarios */
   table td {
-    font-size: 0.6rem !important;   /* reduce celdas */
+    font-size: 0.6rem !important;    /* texto más pequeño */
     padding: 0.15rem 0.1rem !important;
-  }
-
-  table {
-    table-layout: fixed !important;
-    display: block;
-    overflow-x: auto
+    text-align: center !important;
+    line-height: 1.1 !important;
   }
 }
+
