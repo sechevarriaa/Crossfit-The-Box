@@ -933,16 +933,17 @@ table td input::placeholder {
 /* ==========================================================
    TABLA / HORARIOS - Versión Heracrossfit (ajustada a The Box)
    ========================================================== */
-.tabla-horarios {
+@media (max-width: 480px) {
+   .tabla-horarios {
   position: relative; /* asegura que z-index funcione */
   z-index: 1;         /* menor que el menú */
-}
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed; /* columnas de tamaño uniforme */
+  border-collapse: collapse !important;
 }
 
 table th,
@@ -954,6 +955,12 @@ table td {
   background-color: #111;
   font-size: 0.9rem;
   white-space: nowrap; /* no partir palabras */
+  font-size: 0.35rem !important;   /* reduce mucho la letra */
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;  /* no partir palabras */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 /* Encabezado */
@@ -961,8 +968,8 @@ table th {
   background-color: #c00;
   color: #fff;
   font-weight: 700;
+  }
 }
-
 
 
 
