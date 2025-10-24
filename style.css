@@ -858,39 +858,6 @@ table td input::placeholder {
     padding: 0.5rem 1rem;
   }
 
-//* Móvil: mostrar menú toggle */
-@media (max-width: 899px) {
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #fff; /* o rojo si quieres el acento */
-  }
-
-  .main-nav ul {
-    display: none; /* ocultamos el menú por defecto */
-    flex-direction: column;
-    gap: 0.5rem;
-    background-color: #111; /* fondo menú móvil */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .main-nav ul.show {
-    display: flex; /* muestra el menú al activar */
-  }
-
-  .main-nav a {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-}
-
 
   /* -------------------- CONTACTO -------------------- */
   /* Contacto: formulario arriba, mapa debajo en móviles y desktop */
@@ -924,67 +891,89 @@ table td input::placeholder {
     font-size: 0.85rem;
   }
 }
+/* -------------------- MENÚ HAMBURGUESA MÓVIL -------------------- */
+@media (max-width: 899px) {
 
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    z-index: 1000; /* se mantiene visible sobre todo */
+  }
+
+  .main-nav ul {
+    display: none; /* oculto por defecto */
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 999; /* menú sobre todo */
+  }
+
+  .main-nav ul.show {
+    display: flex; /* mostrar al activar */
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
 /* ==========================================================
    TABLA / HORARIOS - Versión Heracrossfit (ajustada a The Box)
    ========================================================== */
-.tabla-horarios {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+@media (max-width: 480px) {
+   .tabla-horarios {
+  position: relative; /* asegura que z-index funcione */
+  z-index: 1;         /* menor que el menú */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed; /* columnas de tamaño uniforme */
+  border-collapse: collapse !important;
 }
 
-table th,
+table th {
+  background-color: #111;
+  color: #fff;
+  font-weight: 300;
+  }
+
 table td {
   text-align: center;
-  padding: 0.6rem;
-  border: 1px solid #333;
-  color: #fff;
-  background-color: #111;
+  border: 2px solid #e63946;
+  padding: 0.3rem;
+  text-align: center;
+  background-color: #000;
   font-size: 0.9rem;
   white-space: nowrap; /* no partir palabras */
-}
+  font-size: 0.35rem !important;   /* reduce mucho la letra */
+  line-height: 1 !important;
+  white-space: nowrap !important;  /* no partir palabras */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  } 
 
-/* Encabezado */
-table th {
-  background-color: #c00;
+table td input {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  background: transparent;
   color: #fff;
-  font-weight: 700;
-}
-
-/* ==========================================================
-   TABLA / HORARIOS - MÓVIL SIN SCROLL
-   ========================================================== */
-@media (max-width: 480px) {
-
-  table {
-    width: 100% !important;
-    table-layout: fixed !important; /* columnas de tamaño uniforme */
-    border-collapse: collapse !important;
+  text-align: center;
   }
 
-  table th,
-  table td {
-    font-size: 0.35rem !important;   /* reduce mucho la letra */
-    padding: 0.2rem !important;
-    line-height: 1 !important;
-    text-align: center !important;
-    white-space: nowrap !important;  /* no partir palabras */
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  /* Opcional: forzar que el texto completo se vea reduciendo la letra */
-  table th {
-    font-weight: 700 !important;
+table td input::placeholder {
+  color: #fff;
   }
 }
-
-
-
