@@ -874,21 +874,24 @@ table td input::placeholder {
   }
 }
 
-/* -------------------- TABLAS / HORARIOS - MÓVIL EXTREMO -------------------- */
+/* -------------------- FORZAR TABLA EN MÓVILES -------------------- */
 @media (max-width: 480px) {
   table thead th {
-    font-size: 0.6rem;        /* más pequeño para móviles */
-    padding: 0.1rem 0.05rem;  /* aún menos espacio interno */
-    line-height: 0.9;
-    word-break: break-word;   /* permite dividir palabras largas */
+    font-size: 0.55rem !important;  /* fuerza tamaño más pequeño */
+    padding: 0.05rem !important;
+    line-height: 0.9 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
   table td {
-    font-size: 0.65rem;       /* reduce también el texto de las celdas */
-    padding: 0.2rem 0.1rem;
+    font-size: 0.6rem !important;   /* reduce celdas */
+    padding: 0.15rem 0.1rem !important;
   }
 
   table {
-    table-layout: fixed;      /* fuerza a que las columnas se mantengan proporcionales */
+    table-layout: fixed !important;
+    display: block;
+    overflow-x: auto
   }
 }
