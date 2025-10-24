@@ -934,11 +934,9 @@ table td input::placeholder {
    TABLA / HORARIOS - Versión Heracrossfit (ajustada a The Box)
    ========================================================== */
 .tabla-horarios {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   position: relative; /* asegura que z-index funcione */
   z-index: 1;         /* menor que el menú */
+}
 }
 
 table {
