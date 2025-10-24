@@ -954,7 +954,7 @@ table td input::placeholder {
     border: none;
     cursor: pointer;
     position: relative;
-    z-index: 7001; /* Muy por encima del fondo y la tabla */
+    z-index: 500; /* Muy por encima del fondo y la tabla */
   }
 
   /* Alineación del header */
