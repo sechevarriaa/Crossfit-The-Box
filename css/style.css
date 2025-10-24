@@ -7,143 +7,167 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
 /* -------------------- BASE -------------------- */
 html {
-  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-  scroll-behavior: smooth;
-  color: #f5f5f5;
-  background-color: #0d0d0d;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  line-height: 1.6;
+  background: #0b0f12;
+  color: #e6eef6;
+  line-height: 1.5;
+  min-height: 100vh;
 }
 
-/* -------------------- CABECERA -------------------- */
-header {
+/* -------------------- CONTENEDOR PRINCIPAL -------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* -------------------- HEADER -------------------- */
+.site-header {
+  background: linear-gradient(180deg, rgba(11,15,18,0.95), rgba(11,15,18,0.90));
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding: 0.6rem 1rem;
+}
+
+.header-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  padding: 1rem 2rem;
-  position: relative;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-header img {
-  height: 60px;
+.logo {
+  width: 140px;
+  height: 140px;
+  margin-left: -180px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-.main-nav ul {
+.menu-toggle {
+  display: none;
+}
+
+/* -------------------- TEXTO DE MARCA -------------------- */
+.brand-text {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand-text h1 {
+  font-family: "Bungee Tint", cursive;
+  font-size: 4rem;
+  background: linear-gradient(90deg, #e63946, #b22222);
+  text-shadow: 2px 2px #65646470, -2px -2px #080808;
+  -webkit-background-clip: text;
+  margin: 0;
+}
+
+.brand-text p {
+  font-family: "Bungee Tint", cursive;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* -------------------- MENÚ DE NAVEGACIÓN -------------------- */
+.main-nav ul {
   list-style: none;
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
 }
 
 .main-nav a {
+  color: rgba(230,230,230,0.9);
   text-decoration: none;
-  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.18s ease;
   font-weight: 600;
-  transition: color 0.3s;
+  font-size: 1rem;
 }
 
 .main-nav a:hover {
-  color: #e63946;
+  background: rgba(230,57,70,0.12);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
-/* Botón menú (oculto en escritorio) */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
+.main-nav a.active {
+  background: linear-gradient(90deg, #e63946, #b22222);
   color: #fff;
 }
 
-/* -------------------- SECCIONES GENERALES -------------------- */
-section {
-  padding: 3rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* -------------------- TABLAS / HORARIOS -------------------- */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-thead {
-  background-color: #1a1a1a;
-}
-
-table th,
-table td {
-  border: 1px solid #333;
-  padding: 0.5rem;
-  word-wrap: break-word;
-}
-
-thead th {
-  font-size: 0.9rem;
-  font-weight: 700;
-  background-color: #222;
-}
-
-tbody td {
-  font-size: 0.85rem;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #1a1a1a;
-}
-
-/* -------------------- WOD DE LA SEMANA -------------------- */
-.wod-contenido {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.wod-descripcion,
-.video {
-  flex: 1;
-}
-
-.video iframe {
-  width: 100%;
-  border-radius: 10px;
-  height: 315px;
-}
-
-/* -------------------- FOOTER -------------------- */
-footer {
-  background-color: #111;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* -------------------- MEDIA QUERY: MÓVILES -------------------- */
+/* -------------------- RESPONSIVE MÓVIL -------------------- */
 @media (max-width: 899px) {
-  header {
-    flex-wrap: wrap;
+
+  .site-header {
+    position: static;
+    padding: 0.5rem 1rem;
   }
 
-  /* Mostrar botón del menú y ocultar menú por defecto */
-  .menu-toggle {
-    display: block;
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .main-nav ul {
-    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 0;
+  }
+
+  .brand-text h1 {
+    font-size: 2rem;
+  }
+
+  .brand-text p {
+    font-size: 0.9rem;
+  }
+
+  /* BOTÓN MENÚ HAMBURGUESA */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .main-nav ul {
+    display: none; /* oculto por defecto */
     flex-direction: column;
     gap: 0.5rem;
     background-color: #111;
@@ -152,40 +176,10 @@ footer {
     left: 0;
     width: 100%;
     padding: 1rem;
+    z-index: 100;
   }
 
   .main-nav ul.show {
-    display: flex;
-  }
-
-  .main-nav a {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-
-  /* Tabla responsive */
-  table thead th {
-    font-size: 0.7rem;
-    line-height: 1.2;
-    padding: 0.25rem;
-  }
-
-  table td {
-    font-size: 0.65rem;
-    padding: 0.25rem;
-    white-space: normal;
-  }
-
-  /* Ajustes WOD */
-  .wod-contenido {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    overflow-x: hidden;
-    gap: 1.5rem;
-  }
-
-  .video iframe {
-    height: 200px;
+    display: flex; /* mostrar cuando se active */
   }
 }
