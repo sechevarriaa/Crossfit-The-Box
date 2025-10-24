@@ -965,7 +965,9 @@ table td input::placeholder {
     display: flex !important;
   }
 
-  /* Botón hamburguesa visible solo en móvil */
+ /* ===================== MÓVIL Y TABLET ===================== */
+@media (max-width: 1024px) {
+  /* Botón hamburguesa visible en móvil y tablet */
   .menu-toggle {
     display: block;
     font-size: 2rem;
@@ -974,51 +976,80 @@ table td input::placeholder {
     border: none;
     cursor: pointer;
     position: relative;
-    z-index: 6000; /* 🔥 aún más alto que el menú */
+    z-index: 6001; /* 🔥 más alto que todo */
   }
 
-  /* Alineación general del header en móvil */
+  /* Alineación del header */
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  /* 🔥 Evita que la tabla de horarios bloquee el menú */
+  /* Contenedor del menú lateral */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -260px; /* oculto por defecto */
+    height: 100%;
+    width: 260px;
+    background: rgba(0, 0, 0, 0.96); /* fondo oscuro visible */
+    backdrop-filter: blur(4px);
+    transition: left 0.3s ease;
+    z-index: 6000;
+    padding-top: 5rem;
+  }
+
+  /* Estado abierto del menú */
+  .main-nav.open {
+    left: 0; /* se despliega desde la izquierda */
+  }
+
+  /* Evita que la tabla de horarios bloquee el menú */
   body.menu-abierto main,
   body.menu-abierto .tabla-horarios {
     pointer-events: none;
   }
 
-  /* Fondo para el menú desplegado */
-  .main-nav.open {
-    position: relative;
+  /* Lista de enlaces */
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 0 1.5rem;
   }
 
-  /* Ajustes visuales de los enlaces del menú */
+  /* Enlaces del menú */
   .main-nav ul li a {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-decoration: none;
     display: block;
+    width: 100%;
     padding: 0.5rem 0;
+    transition: background 0.3s;
   }
 
   .main-nav ul li a:hover {
-    background-color: #c00;
+    background-color: #e50914;
   }
 }
 
 /* ===================== ESCRITORIO ===================== */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .menu-toggle {
     display: none; /* 🔒 ocultamos el botón hamburguesa en escritorio */
+  }
+
+  .main-nav {
+    position: static;
+    background: none;
   }
 
   .main-nav ul {
     display: flex;
     gap: 2rem;
-    position: static;
-    background: none;
   }
 }

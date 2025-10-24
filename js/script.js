@@ -3,5 +3,5 @@ const mainNav = document.querySelector('.main-nav');
 
 menuToggle.addEventListener('click', () => {
   mainNav.classList.toggle('open');
-  document.body.classList.toggle('menu-abierto'); // 🔥 Añadido
+  document.body.classList.toggle('menu-abierto');
 });
