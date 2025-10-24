@@ -937,6 +937,8 @@ table td input::placeholder {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  position: relative; /* asegura que z-index funcione */
+  z-index: 1;         /* menor que el menú */
 }
 
 table {
