@@ -1,4 +1,13 @@
 /*
+Autor: Saioa Echevarria Ballesteros
+Asignatura: LMGSI
+UD: UD 2
+Tarea: Sitio Web
+Documento de Reflexión: https://drive.google.com/file/d/1c3WF-h-CHO0jnjwFMgxkOrCckZlwYSOg/view?usp=drive_link
+*/
+
+
+/*
   Script para el Botón del menú en móviles y tablets:
   - Selecciona el botón de menú, el menú principal y todos los enlaces del menú.
   - Al hacer clic en el botón, alterna la clase 'open' para mostrar u ocultar el menú.
