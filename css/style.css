@@ -854,6 +854,45 @@ table td input::placeholder {
     padding: 0.5rem 1rem;
   }
 
+  /* Ocultar botón y menú desplegable por defecto en desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Móvil: menú desplegable */
+@media (max-width: 899px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff; /* o rojo si quieres el acento */
+  }
+
+  .main-nav ul {
+    display: none; /* ocultamos el menú por defecto */
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #111; /* fondo menú móvil */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .main-nav ul.show {
+    display: flex; /* muestra el menú al activar */
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+
   /* -------------------- CONTACTO -------------------- */
   /* Contacto: formulario arriba, mapa debajo en móviles y desktop */
 .contacto-grid {
