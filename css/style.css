@@ -854,6 +854,19 @@ table td input::placeholder {
     padding: 0.5rem 1rem;
   }
 
+  /* -------------------- CONTACTO -------------------- */
+  /* Contacto: formulario arriba, mapa debajo en móviles y desktop */
+.contacto-grid {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos uno debajo de otro */
+  gap: 2rem; /* Espacio entre formulario y mapa */
+}
+
+.contacto-grid .mapa iframe {
+  width: 100%;  /* Ocupa todo el ancho */
+  height: 450px; /* Ajusta la altura del mapa */
+}
+
   /* -------------------- FOOTER -------------------- */
   .footer-grid {
     grid-template-columns: 1fr;
@@ -932,40 +945,6 @@ table th {
   /* Opcional: forzar que el texto completo se vea reduciendo la letra */
   table th {
     font-weight: 700 !important;
-  }
-}
-/* ==========================================================
-   TABLA / HORARIOS - ABREVIATURAS EN MÓVIL
-   ========================================================== */
-@media (max-width: 480px) {
-  table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-  }
-
-  table td input,
-  table th {
-    font-size: 0.45rem !important; /* letra pequeña legible */
-    text-align: center;
-    padding: 0.2rem !important;
-  }
-
-  /* Abreviaturas automáticas usando placeholder */
-  td.halterofilia input::placeholder {
-    content: "Halt.";
-  }
-
-  td.gimnastico input::placeholder {
-    content: "Gym.";
-  }
-
-  td.open-gym input::placeholder {
-    content: "Open";
-  }
-
-  td.hyrox input::placeholder {
-    content: "Hyrox";
   }
 }
 
