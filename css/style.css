@@ -910,7 +910,7 @@ table {
 table th {
   background-color: #111;
   color: #fff;
-  font-size: 0.3rem;
+  font-size: 0.5rem;
   }
 
 table td {
@@ -978,21 +978,8 @@ table td input::placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    }
 
-  /* Estado abierto */
-  .main-nav.open {
-    right: 0;
-  }
-
-  /* Fondo oscuro detrás del menú */
-  body.menu-abierto::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 6500; /* 👈 por debajo del menú y botón */
-  }
 
   /* Enlaces del menú */
   .main-nav ul {
