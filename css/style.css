@@ -948,9 +948,9 @@ table td input::placeholder {
   /* Botón hamburguesa visible */
   .menu-toggle {
     display: block;
-    font-size: 2rem;
+    font-size: 1rem;
     color: #fff;
-    background: none;
+    background: #000;
     border: none;
     cursor: pointer;
     position: relative;
