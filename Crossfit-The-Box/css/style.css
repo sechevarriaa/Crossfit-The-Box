@@ -1,0 +1,1035 @@
+/*
+Autor: Saioa Echevarria Ballesteros
+Asignatura: LMGSI
+UD: UD 2
+Tarea: Sitio Web
+Documento de Reflexión: https://drive.google.com/file/d/1c3WF-h-CHO0jnjwFMgxkOrCckZlwYSOg/view?usp=drive_link
+*/
+
+/* -------------------- RESET GENERAL -------------------- */
+/* Reinicia márgenes y padding, asegura que el tamaño incluya borde y relleno */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* -------------------- BASE -------------------- */
+/* Define tipografía general, tamaño base, color de fondo y texto del body */
+html {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #0b0f12;
+  color: #e6eef6;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* -------------------- CONTENEDOR PRINCIPAL -------------------- */
+/* Contenedor central de toda la página: ancho máximo, centrado y padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* -------------------- HEADER -------------------- */
+/* Contiene logo, texto de marca y navegación principal */
+.site-header {
+  background: linear-gradient(180deg, rgba(11,15,18,0.95), rgba(11,15,18,0.90));
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding: 0.6rem 1rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  margin-left: -180px;
+  object-fit: cover;
+  border-radius: 12px;
+  
+}
+.menu-toggle {
+  display: none;
+}
+
+/* -------------------- TEXTO DE MARCA -------------------- */
+/* Contiene título principal h1 y subtítulo p de la marca */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.brand-text h1 {
+  font-family: "Bungee Tint", cursive;
+  font-size: 4rem;
+  background: linear-gradient(90deg, #e63946, #b22222);
+  text-shadow: 2px 2px #65646470, -2px -2px #080808;
+  -webkit-background-clip: text;
+  margin: 0;
+}
+
+.brand-text p {
+  font-family: "Bungee Tint", cursive;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* -------------------- MENÚ DE NAVEGACIÓN -------------------- */
+/* Lista de enlaces principales de la web con hover y estado activo */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.2rem;
+}
+
+.main-nav a {
+  color: rgba(230,230,230,0.9);
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.18s ease;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main-nav a:hover {
+  background: rgba(230,57,70,0.12);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.main-nav a.active {
+  background: linear-gradient(90deg, #e63946, #b22222);
+  color: #fff;
+}
+
+/* -------------------- SECCIÓN HERO -------------------- */
+/* Contiene título principal, imagen y texto descriptivo */
+.hero {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-family: "Bungee Tint", cursive;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  margin-bottom: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-img {
+  width: 45%;
+  max-width: 550px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.hero-text {
+  width: 45%;
+  text-align: justify;
+}
+
+.hero-text p {
+  color: rgba(230,230,230,0.9);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* -------------------- BOTÓN DE RESERVA -------------------- */
+/* Botón específico para reservar clases  que dirige al formulario de reserva*/
+.btn-cta {
+  display: inline-block;
+  background: linear-gradient(90deg,#e63946,#b22222);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* -------------------- SECCIONES, GRID Y CARDS -------------------- */
+/* Cards de entrenamientos, coaches, noticias, niveles y tarifas */
+.section-title {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 1.5rem;
+  color: #e63946;
+  border-left: 4px solid #e63946; /* Línea roja lateral */
+  padding-left: 0.75rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); /* Columnas flexibles */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  transition: transform 0.18s;
+}
+
+.card:hover { transform: translateY(-8px); }
+
+.coach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.coach {
+  background: rgba(255,255,255,0.02);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.coach img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 0.6rem;
+  border: 4px solid #e63946;
+}
+
+.coach h4 {
+  color: #e63946;
+  margin-top: 0.5rem;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.news-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.02);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.news-img {
+  width: 300px;
+  max-width: 35%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.news-text {
+  flex: 1;
+}
+
+.news-text h3 {
+  color: #e63946;
+  margin-bottom: 0.8rem;
+}
+
+.news-text p {
+  color: rgba(230,230,230,0.9);
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* -------------------- ENTRENAMIENTOS -------------------- */
+/* Grid de cards de entrenamientos */
+.entrenamientos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  justify-items:center;
+  align-items:center;
+  text-align:center;
+}
+
+.entrenamientos-grid .card:nth-child(1) { grid-column: 1; grid-row: 1; }
+.entrenamientos-grid .btn-wod-container { grid-column: 2; grid-row: 1; }
+.entrenamientos-grid .card:nth-child(3) { grid-column: 3; grid-row: 1; }
+.entrenamientos-grid .card:nth-child(4) { grid-column: 1; grid-row: 2; }
+.entrenamientos-grid .card:nth-child(5) { grid-column: 2; grid-row: 2; }
+.entrenamientos-grid .card:nth-child(6) { grid-column: 3; grid-row: 2; }
+
+.entrenamientos-grid .card h3 {
+  font-family: "Bungee Tint", cursive;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #e63946, #b22222);
+  text-shadow: 2px 2px #65646470, -2px -2px #080808;
+  -webkit-background-clip: text;
+  margin: 0;
+  text-align: center;
+}
+
+/* -------------------- WOD DE LA SEMANA -------------------- */
+/* Contiene título del WOD, descripción, diferentes niveles y video */
+.wod-article { margin-top: 2rem; }
+
+.murph-title {
+  font-family: "Bungee Tint", cursive;
+  font-size: 3rem;
+  background: linear-gradient(90deg, #e63946, #b22222);
+  text-shadow: 2px 2px #b22222, -2px -2px #080808;
+  -webkit-background-clip: text;
+}
+
+.wod-contenido {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.wod-descripcion {
+  flex: 1 1 50%;
+  text-align: center;
+  background: rgba(255,255,255,0.02);
+  border: 2px solid #e63946;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  color: white;
+}
+
+.wod-descripcion h3 {
+  margin-top: 2;
+  color: #e63946;
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+.wod-descripcion ul {
+  list-style-position: inside;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.video {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.video-titulo {
+  color: #e63946;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* -------------------- COACH SECTION -------------------- */
+/* Sección de coaches con foto y nombre */
+.wod-coach { margin-top: 3rem; }
+
+.coach-titulo {
+  color: #e63946;
+  font-weight: bold;
+  font-size: 2rem;
+  border-left: 6px solid #e63946;
+  padding-left: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.coach-contenedor {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.coach-foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e63946;
+}
+
+/* -------------------- NIVELES DE ENTRENAMIENTO -------------------- */
+.niveles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.nivel {
+  background: rgba(255,255,255,0.02);
+  border: 2px solid #e63946;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  text-align: center;
+  min-height: 200px;
+}
+
+.nivel ul {
+  list-style-position: inside;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.nivel h4 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.avanzado-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.nivel.avanzado {
+  max-width: 400px;
+  margin-top: 2rem;
+  margin-left: 4.5rem;
+}
+
+.btn-reserva {
+  display: inline-block;
+  background: #e63946;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-reserva:hover {
+  background: #b22222;
+}
+
+.botones-libres {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.botones-libres a:last-child {
+  margin-left: auto;
+}
+
+.avanzado-con-gif-boton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 20rem;
+}
+
+.gif-avanzado {
+  width: 100px;
+  height: auto;
+}
+
+/* -------------------- HORARIOS -------------------- */
+/* Estilos para tablas dentro de la web
+   Elementos: tabla completa, celdas (td) y campos de input dentro de las celdas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td {
+  border: 2px solid #e63946;
+  padding: 0.3rem;
+  text-align: center;
+  background-color: #000;
+}
+
+table td input {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+}
+
+table td input::placeholder {
+  color: #fff;
+}
+
+/* -------------------- TARIFAS -------------------- */
+/* Sección de tarifas de clases
+   Elementos: contenedor general (.tarifas), título h2, grid de cards (.tarifas-grid)
+   Cada card contiene: título h3, descripción p y borde/acento rojo */
+.tarifas {
+  margin-top: 2rem;
+}
+
+.tarifas h2 {
+  color: #e63946;
+  border-left: 6px solid #e63946;
+  padding-left: 10px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.tarifas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.tarifa {
+  background: rgba(255,255,255,0.02);
+  border: 2px solid #e63946;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.tarifa h3 {
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+.tarifa p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* -------------------- PRUEBA DE CLASE -------------------- */
+/* Sección para reservar clase de prueba
+   Elementos: párrafo descriptivo, botón principal (.btn-cta) */
+.prueba-clase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.prueba-clase p {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.prueba-clase .btn-cta {
+  background: #e63946;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.prueba-clase .btn-cta:hover {
+  background: #b22222;
+}
+
+/* -------------------- CONTACTO -------------------- */
+/* Sección de contacto
+   Elementos: grid de contacto (.contacto-grid), formulario (.contact-form),
+   etiquetas label, inputs, textarea, botón de envío, información adicional (.info-reserva), mapa (.mapa) */
+.contacto-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #e63946;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px solid #e63946;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #b22222;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background: #e63946;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #b22222;
+}
+
+.info-reserva {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.mapa {
+  flex: 1;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+/* -------------------- FOOTER -------------------- */
+/* Contiene enlaces y copyright */
+.site-footer {
+  background: #07101a;
+  color: rgba(255,255,255,0.8);
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.site-footer a { color:#e63946; text-decoration:none; }
+
+/* -------------------- RESPONSIVE MÓVIL -------------------- */
+/* Contiene la configuración necesario de cada sección para que se vean correctamente en moviles y tablets */
+
+@media (max-width: 899px) {
+
+  /* -------------------- HEADER Y NAVEGACIÓN -------------------- */
+  .site-header {
+    position: static;
+    padding: 0.5rem 1rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 0;
+  }
+
+  .brand-text h1 {
+    font-size: 2rem;
+  }
+
+  .brand-text p {
+    font-size: 0.9rem;
+  }
+
+  /* -------------------- HERO -------------------- */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero-img,
+  .hero-text {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  /* -------------------- NOTICIAS -------------------- */
+  .news-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+  }
+
+  .news-img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .news-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .news-text p {
+    font-size: 0.9rem;
+  }
+  /* -------------------- ENTRENAMIENTOS -------------------- */
+  .entrenamientos-grid {
+    display: flex;              
+    flex-direction: column;     
+    align-items: center;        
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .entrenamientos-grid .card {
+    width: 100%;                
+    max-width: 320px;           
+    margin: 0 auto;
+  }
+
+  .entrenamientos-grid h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .entrenamientos-grid p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  /* -------------------- WOD DE LA SEMANA -------------------- */
+  .wod-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+  }
+
+  .wod-descripcion,
+  .video {
+    width: 100%;
+    max-width: 320px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .wod-descripcion h3 {
+    font-size: 1.4rem;
+  }
+
+  .wod-descripcion ul {
+    font-size: 0.85rem;
+    padding-left: 1rem;
+  }
+
+  .video video {
+    max-width: 100%;
+    max-height: auto;
+    height: auto;
+  }
+
+  /* -------------------- COACHES -------------------- */
+  .coach-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coach img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .niveles-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nivel {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 1rem auto;
+    min-height: auto;
+  }
+
+  .avanzado-con-gif-boton {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 1rem auto;
+    min-height: auto;
+  }
+
+  .gif-avanzado {
+    width: 80px;
+  }
+
+  /* -------------------- CONTACTO -------------------- */
+.contacto-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  }
+
+.contacto-grid .mapa iframe {
+  width: 100%;
+  height: 450px;
+  }
+
+  /* -------------------- BOTONES -------------------- */
+  .btn-cta,
+  .btn-reserva {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+  /* -------------------- FOOTER -------------------- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .site-footer a {
+    font-size: 0.9rem;
+  }
+
+  footer h4 {
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+  }
+}
+
+/* -------------------- HORRAIOS Y TARIFAS -------------------- */
+/* Necesita otra medida especifoca para moviles para que se pueda leer sin problema*/
+@media (max-width: 480px) {
+.tabla-horarios {
+  position: relative;
+  z-index: 1;
+  }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  }
+
+table th {
+  background-color: #111;
+  color: #fff;
+  font-size: 0.5rem;
+  }
+
+table td {
+  text-align: center;
+  border: 2px solid #e63946;
+  padding: 0.3rem;
+  text-align: center;
+  background-color: #000;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  font-size: 0.35rem;
+  line-height: 1;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  } 
+
+table td input {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  }
+
+table td input::placeholder {
+  color: #fff;
+  }
+}
+
+/* -------------------- BOTÓN DE MENÚ -------------------- */
+/* Botón desplegable con el menú que aparece sólo en moviles y tablets */
+@media (max-width: 1199px) {
+
+  .menu-toggle {
+    display: block;
+    font-size: 3rem;
+    color: #fff;
+    background: #0b0f12;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 500;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    max-width: 320px;
+    height: 100%;
+    background-color: #0b0f12;
+    transition: right 0.3s ease;
+    z-index: 7000;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .main-nav.open {
+    right: 0;
+    }
+
+  body.menu-abierto::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 6500;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    background-color: #0b0f12;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav ul li a {
+    color: #fff;
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: block;
+    padding: 0.7rem 0;
+    z-index: 7002;
+    position: relative;
+  }
+
+  .main-nav ul li a:hover {
+    background-color: #e50914;
+  }
+
+  .tabla-horarios {
+    position: relative;
+    z-index: 1;
+  }
+
+  body.menu-abierto main {
+    pointer-events: none;
+  }
+}
+
+/* -------------------- BOTÓN DE MENÚ EN ESCRITORIO -------------------- */
+/* En la versión de escritorio no aparece el botón de menú*/
+@media (min-width: 1200px) {
+  .menu-toggle {
+    display: none;
+  }
+}

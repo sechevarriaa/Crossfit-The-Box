@@ -1,0 +1,169 @@
+<!-- 
+Autor: Saioa Echevarria Ballesteros
+Asignatura: LMGSI
+UD: UD 2
+Tarea: Sitio Web
+Documento de Reflexión: https://drive.google.com/file/d/1c3WF-h-CHO0jnjwFMgxkOrCckZlwYSOg/view?usp=drive_link
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crossfit The Box - Inicio</title>
+  <meta name="description" content="Bienvenido a Crossfit The Box - CrossFit. Reserva tu clase de prueba.">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<!-- Header principal de la web
+       Contiene:
+       - Logo de la marca
+       - Texto de marca con título y eslogan
+       - Menú de navegación principal con enlaces a todas las secciones de la web
+       - Diseño sticky para permanecer visible al hacer scroll -->
+<header class="site-header" role="banner">
+  <section class="header-inner container">
+    <img src="images/logo.png" alt="Logo The Box" class="logo">
+      <section class="brand-text">
+       <h1>Crossfit The Box</h1>
+      <p>Esfuerzo - Constancia - Superación</p>
+      </section>
+
+    <!-- Botón para móviles y tablets -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+      &#9776;
+    </button>
+
+    <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="entrenamientos.html">Entrenamientos</a></li>
+        <li><a href="wod.html" class="active">WOD de la semana</a></li>
+        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<!-- ================= MAIN ================= -->
+<!-- Contiene el artículo principal con el WOD de la semana -->
+<!-- Sección con la descripción del WOD y video ilustrativo -->
+<!-- Sección con consejos del coach para cada nivel (Principiante, Intermedio y Avanzado)-->
+<main class="container">
+  <article class="wod-article">
+    <h2 class="section-title">WOD de la semana: <span class="murph-title">Murph</span></h2>
+
+    <section class="wod-contenido">
+      <section class="wod-descripcion">
+        <h3>Descripción</h3>
+        <p>En honor al teniente Michael P. Murphy. El WOD consiste en:</p>
+        <ul>
+          <li>1600 metros corriendo</li>
+          <li>100 dominadas</li>
+          <li>200 flexiones</li>
+          <li>300 sentadillas</li>
+          <li>1600 metros corriendo</li>
+          <li>Chaleco de 9kg opcional</li>
+        </ul>
+      </section>
+
+      <section class="video">
+        <h3 class="video-titulo"></h3>
+        <video autoplay muted controls loop width="100%" height="100%">
+          <source src="videos/Murph.webm" type="video/webm">
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      </section>
+    </section>
+
+    <section class="wod-coach">
+      <h3 class="coach-titulo">Consejos de tu coach</h3>
+
+      <section class="coach-contenedor">
+        <img src="images/coach2.jpg" alt="Coach" class="coach-foto">
+
+        <section class="niveles-grid">
+          <article class="nivel">
+            <h4>Principiante</h4>
+            <ul>
+              <li>800 metros carrera</li>
+              <li>50 dominadas asistidas</li>
+              <li>100 flexiones</li>
+              <li>150 sentadillas</li>
+              <li>800 metros carrera</li>
+            </ul>
+          </article>
+
+          <article class="nivel">
+            <h4>Intermedio</h4>
+            <ul>
+              <li>1600 metros de carrera + 10 rondas de:</li>
+              <li>5 dominadas</li>
+              <li>10 flexiones</li>
+              <li>15 sentadillas</li>
+            </ul>
+          </article>
+        </section>
+      </section>
+
+      <aside class="avanzado-con-gif-boton">
+        <img src="images/gif.gif" alt="Animación reserva" class="gif-avanzado">
+        <article class="nivel avanzado">
+          <h4>Avanzado</h4>
+          <p>Versión RX con chaleco lastrado de 9 kg (hombres) y 6 kg (mujeres).</p>
+        </article>
+      </aside>
+    </section>
+
+    <section class="botones-libres">
+      <a href="entrenamientos.html" class="btn-cta">Volver a entrenamientos</a>
+      <a href="contacto.html" class="btn-cta">Reserva tu clase</a>
+    </section>
+
+  </article>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<!--  Información de contacto (dirección, teléfono, email)
+      Enlaces rápidos a todas las secciones
+      Enlaces a redes sociales -->
+<footer class="site-footer">
+  <section class="footer-grid container">
+    <section>
+      <strong>The Box</strong><br>
+      C/ Gran Vía 23, Bilbao<br>
+      Tel: <a href="tel:+34600111222">600 111 222</a><br>
+      Email: <a href="mailto:crossfitthebox@gmail.com">crossfitthebox@gmail.com</a>
+    </section>
+
+    <nav>
+      <h4>Enlaces</h4>
+      <ul style="list-style:none;margin-top:.5rem;padding-left:0">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="entrenamientos.html">Entrenamientos</a></li>
+        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h4>Síguenos</h4>
+      <p>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> · 
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </p>
+    </section>
+  </section>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
