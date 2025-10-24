@@ -850,44 +850,25 @@ table td input::placeholder {
   }
 
 /* -------------------- TABLAS / HORARIOS - MÓVIL EXTREMO -------------------- */
-table {
-  table-layout: fixed;  /* columnas con ancho uniforme */
-  width: 100%;
-  border-collapse: collapse;
-  font-family: sans-serif;
+/* -------------------- VERSIÓN MÓVIL -------------------- */
+@media (max-width: 480px) {
+  table thead th {
+    font-size: 0.6rem;       /* más pequeño para móviles */
+    padding: 0.1rem 0.05rem; /* aún menos espacio interno */
+    line-height: 0.9;
+    word-break: break-word;  /* permite dividir palabras largas */
+  }
+
+  table td {
+    font-size: 0.65rem;      /* reduce también el texto de las celdas */
+    padding: 0.2rem 0.1rem;
+  }
+
+  table {
+    table-layout: fixed;     /* fuerza a que las columnas se mantengan proporcionales */
+  }
 }
 
-/* Encabezados (días de la semana) */
-table thead th {
-  font-size: 0.8rem;      /* extremadamente pequeño para caber todo */
-  line-height: 1.0;
-  padding: 0.15rem 0.1rem; /* mínimo espacio interno */
-  text-align: center;
-  white-space: normal;
-
-/* Celdas de horarios */
-table tbody td {
-  font-size: 0.50rem;      /* letra muy pequeña para caber palabras largas */
-  line-height: 1.0;
-  padding: 0.3rem 0.15rem; /* reduce padding al mínimo */
-  text-align: center;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  overflow: hidden;
-}
-
-/* Inputs dentro de las celdas */
-table tbody td input {
-  font-size: 0.25rem;      /* coincide con el tamaño de la celda */
-  line-height: 1.0;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-  pointer-events: none;    /* no editable */
-  background: transparent;
-  color: #fff;
-}
 
 
 
