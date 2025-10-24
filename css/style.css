@@ -969,13 +969,13 @@ table td input::placeholder {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
+    width: 60%;
     max-width: 320px;
     height: 100%;
     background-color: #0b0f12; /* 🔥 Fondo negro sólido */
     transition: right 0.3s ease;
     z-index: 7000; /* justo debajo del botón */
-    padding-top: 5rem;
+    padding-top: 2rem 1 rem
     display: flex;
     flex-direction: column;
     align-items: center;
