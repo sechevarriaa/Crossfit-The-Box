@@ -943,7 +943,12 @@ table {
   border-collapse: collapse !important;
 }
 
-table th,
+table th {
+  background-color: #111;
+  color: #fff;
+  font-weight: 300;
+  }
+
 table td {
   text-align: center;
   padding: 0.6rem;
@@ -958,14 +963,7 @@ table td {
   white-space: nowrap !important;  /* no partir palabras */
   overflow: hidden !important;
   text-overflow: ellipsis !important;
-}
-
-/* Encabezado */
-table th {
-  background-color: #c00;
-  color: #fff;
-  font-weight: 700;
-  }
+  } 
 }
 
 
