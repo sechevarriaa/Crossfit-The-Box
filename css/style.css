@@ -963,33 +963,6 @@ table th {
   font-weight: 700;
 }
 
-/* ==========================================================
-   TABLA / HORARIOS - MÓVIL SIN SCROLL
-   ========================================================== */
-@media (max-width: 480px) {
-
-  table {
-    width: 100% !important;
-    table-layout: fixed !important; /* columnas de tamaño uniforme */
-    border-collapse: collapse !important;
-  }
-
-  table th,
-  table td {
-    font-size: 0.35rem !important;   /* reduce mucho la letra */
-    padding: 0.2rem !important;
-    line-height: 1 !important;
-    text-align: center !important;
-    white-space: nowrap !important;  /* no partir palabras */
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-
-  /* Opcional: forzar que el texto completo se vea reduciendo la letra */
-  table th {
-    font-weight: 700 !important;
-  }
-}
 
 
 
