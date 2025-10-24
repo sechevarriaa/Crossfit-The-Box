@@ -767,11 +767,10 @@ table td input::placeholder {
 
   /* -------------------- WOD DE LA SEMANA -------------------- */
   .wod-contenido {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
   }
 
   .wod-descripcion,
@@ -779,7 +778,7 @@ table td input::placeholder {
     width: 100%;
     max-width: 320px;
     margin: 0;
-    text-align: left;
+    text-align: center;
   }
 
   .wod-descripcion h3 {
@@ -821,9 +820,10 @@ table td input::placeholder {
   }
 
   .avanzado-con-gif-boton {
-    flex-direction: column;
-    align-items: left;
-    margin-left: 0;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 1rem auto;
+    min-height: auto;
   }
 
   .gif-avanzado {
@@ -951,21 +951,29 @@ table th {
 
 table td {
   text-align: center;
-  padding: 0.6rem;
-  border: 1px solid #333;
-  color: #fff;
-  background-color: #111;
+  border: 2px solid #e63946;
+  padding: 0.3rem;
+  text-align: center;
+  background-color: #000;
   font-size: 0.9rem;
   white-space: nowrap; /* no partir palabras */
   font-size: 0.35rem !important;   /* reduce mucho la letra */
   line-height: 1 !important;
-  text-align: center !important;
   white-space: nowrap !important;  /* no partir palabras */
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   } 
+
+table td input {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  }
+
+table td input::placeholder {
+  color: #fff;
+  }
 }
-
-
-
-
