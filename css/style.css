@@ -943,28 +943,6 @@ table td input::placeholder {
   }
 }
 
-/* ===================== MENÚ MÓVIL ===================== */
-@media (max-width: 768px) {
-  /* Ocultamos el menú normal */
-  .main-nav ul {
-    display: none;
-    position: absolute;
-    top: 100%; /* justo debajo del header */
-    left: 0;
-    width: 100%;
-    background-color: #111; /* fondo oscuro coherente con tu tema */
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
-    text-align: center;
-    z-index: 5000; /* 🔥 más alto que cualquier otro elemento */
-  }
-
-  /* Mostramos el menú al abrir */
-  .main-nav.open ul {
-    display: flex !important;
-  }
-}
 /* ===================== MÓVIL Y TABLET ===================== */
 @media (max-width: 1199px) {
   /* Botón hamburguesa visible */
@@ -976,7 +954,7 @@ table td input::placeholder {
     border: none;
     cursor: pointer;
     position: relative;
-    z-index: 6001; /* Muy por encima de la tabla */
+    z-index: 7001; /* Muy por encima del fondo y la tabla */
   }
 
   /* Alineación del header */
@@ -986,7 +964,7 @@ table td input::placeholder {
     justify-content: space-between;
   }
 
-  /* Menú lateral */
+  /* Menú lateral desplegable */
   .main-nav {
     position: fixed;
     top: 0;
@@ -996,7 +974,7 @@ table td input::placeholder {
     height: 100%;
     background: rgba(0, 0, 0, 0.98);
     transition: right 0.3s ease;
-    z-index: 6000; /* 👈 MUY alto para quedar sobre la tabla */
+    z-index: 7000; /* justo debajo del botón */
     padding-top: 5rem;
     display: flex;
     flex-direction: column;
@@ -1008,13 +986,13 @@ table td input::placeholder {
     right: 0;
   }
 
-  /* Fondo detrás del menú */
+  /* Fondo oscuro detrás del menú */
   body.menu-abierto::before {
     content: "";
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 5500;
+    z-index: 6500; /* 👈 por debajo del menú y botón */
   }
 
   /* Enlaces del menú */
@@ -1036,16 +1014,23 @@ table td input::placeholder {
     display: block;
     padding: 0.7rem 0;
     transition: background 0.3s;
+    z-index: 7002; /* Enlaces clicables */
+    position: relative;
   }
 
   .main-nav ul li a:hover {
     background-color: #e50914;
   }
 
-  /* 🔥 Corrección: la tabla no tapa el menú */
+  /* 🔥 La tabla queda debajo del menú */
   .tabla-horarios {
     position: relative;
-    z-index: 1; /* muy por debajo del menú */
+    z-index: 1;
+  }
+
+  /* Evita que el resto de la página reciba clics cuando el menú está abierto */
+  body.menu-abierto main {
+    pointer-events: none;
   }
 }
 
@@ -1058,6 +1043,8 @@ table td input::placeholder {
   .main-nav {
     position: static;
     background: none;
+    height: auto;
+    width: auto;
   }
 
   .main-nav ul {
