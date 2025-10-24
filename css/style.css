@@ -858,7 +858,6 @@ table td input::placeholder {
     padding: 0.5rem 1rem;
   }
 
-
   /* -------------------- CONTACTO -------------------- */
   /* Contacto: formulario arriba, mapa debajo en móviles y desktop */
 .contacto-grid {
@@ -891,49 +890,14 @@ table td input::placeholder {
     font-size: 0.85rem;
   }
 }
-/* -------------------- MENÚ HAMBURGUESA MÓVIL -------------------- */
-@media (max-width: 899px) {
 
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #fff;
-    position: relative;
-    z-index: 2000; /* se mantiene visible sobre todo */
-  }
-
-  .main-nav ul {
-    display: none; /* oculto por defecto */
-    flex-direction: column;
-    gap: 0.5rem;
-    background-color: #111;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    z-index: 9999 !important; /* 🔥 máxima prioridad */
-  }
-
-  .main-nav ul.show {
-    display: flex; /* mostrar al activar */
-  }
-
-  .main-nav a {
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-}
 /* ==========================================================
    TABLA / HORARIOS - Versión Heracrossfit (ajustada a The Box)
    ========================================================== */
 @media (max-width: 480px) {
 .tabla-horarios {
   position: relative; /* asegura que z-index funcione */
-  z-index: 0;         /* menor que el menú */
+  z-index: 1;         /* menor que el menú */
 }
 
 table {
@@ -947,6 +911,7 @@ table th {
   background-color: #111;
   color: #fff;
   font-weight: 150;
+  padding: 0.3 rem;
   }
 
 table td {
@@ -975,5 +940,85 @@ table td input {
 
 table td input::placeholder {
   color: #fff;
+  }
+}
+
+/* ===================== MENÚ MÓVIL ===================== */
+@media (max-width: 768px) {
+  /* Ocultamos el menú normal */
+  .main-nav ul {
+    display: none;
+    position: absolute;
+    top: 100%; /* justo debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: #111; /* fondo oscuro coherente con tu tema */
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+    z-index: 5000; /* 🔥 más alto que cualquier otro elemento */
+  }
+
+  /* Mostramos el menú al abrir */
+  .main-nav.open ul {
+    display: flex !important;
+  }
+
+  /* Botón hamburguesa visible solo en móvil */
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 6000; /* 🔥 aún más alto que el menú */
+  }
+
+  /* Alineación general del header en móvil */
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* 🔥 Evita que la tabla de horarios bloquee el menú */
+  body.menu-abierto main,
+  body.menu-abierto .tabla-horarios {
+    pointer-events: none;
+  }
+
+  /* Fondo para el menú desplegado */
+  .main-nav.open {
+    position: relative;
+  }
+
+  /* Ajustes visuales de los enlaces del menú */
+  .main-nav ul li a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .main-nav ul li a:hover {
+    background-color: #c00;
+  }
+}
+
+/* ===================== ESCRITORIO ===================== */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* 🔒 ocultamos el botón hamburguesa en escritorio */
+  }
+
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+    position: static;
+    background: none;
   }
 }
