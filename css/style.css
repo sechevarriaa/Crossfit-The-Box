@@ -964,10 +964,10 @@ table td input::placeholder {
   .main-nav.open ul {
     display: flex !important;
   }
-
- /* ===================== MÓVIL Y TABLET ===================== */
-@media (max-width: 1024px) {
-  /* Botón hamburguesa visible en móvil y tablet */
+}
+/* ===================== MÓVIL Y TABLET ===================== */
+@media (max-width: 1199px) {
+  /* Botón hamburguesa visible */
   .menu-toggle {
     display: block;
     font-size: 2rem;
@@ -976,7 +976,7 @@ table td input::placeholder {
     border: none;
     cursor: pointer;
     position: relative;
-    z-index: 6001; /* 🔥 más alto que todo */
+    z-index: 6001; /* Muy por encima de la tabla */
   }
 
   /* Alineación del header */
@@ -986,61 +986,73 @@ table td input::placeholder {
     justify-content: space-between;
   }
 
-  /* Contenedor del menú lateral */
+  /* Menú lateral */
   .main-nav {
     position: fixed;
     top: 0;
-    left: -260px; /* oculto por defecto */
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
     height: 100%;
-    width: 260px;
-    background: rgba(0, 0, 0, 0.96); /* fondo oscuro visible */
-    backdrop-filter: blur(4px);
-    transition: left 0.3s ease;
-    z-index: 6000;
+    background: rgba(0, 0, 0, 0.98);
+    transition: right 0.3s ease;
+    z-index: 6000; /* 👈 MUY alto para quedar sobre la tabla */
     padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Estado abierto del menú */
+  /* Estado abierto */
   .main-nav.open {
-    left: 0; /* se despliega desde la izquierda */
+    right: 0;
   }
 
-  /* Evita que la tabla de horarios bloquee el menú */
-  body.menu-abierto main,
-  body.menu-abierto .tabla-horarios {
-    pointer-events: none;
+  /* Fondo detrás del menú */
+  body.menu-abierto::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 5500;
   }
 
-  /* Lista de enlaces */
+  /* Enlaces del menú */
   .main-nav ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 1.2rem;
-    padding: 0 1.5rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 
-  /* Enlaces del menú */
   .main-nav ul li a {
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-decoration: none;
     display: block;
-    width: 100%;
-    padding: 0.5rem 0;
+    padding: 0.7rem 0;
     transition: background 0.3s;
   }
 
   .main-nav ul li a:hover {
     background-color: #e50914;
   }
+
+  /* 🔥 Corrección: la tabla no tapa el menú */
+  .tabla-horarios {
+    position: relative;
+    z-index: 1; /* muy por debajo del menú */
+  }
 }
 
 /* ===================== ESCRITORIO ===================== */
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
   .menu-toggle {
-    display: none; /* 🔒 ocultamos el botón hamburguesa en escritorio */
+    display: none;
   }
 
   .main-nav {
@@ -1051,5 +1063,10 @@ table td input::placeholder {
   .main-nav ul {
     display: flex;
     gap: 2rem;
+  }
+
+  .main-nav ul li a {
+    color: #fff;
+    font-size: 1rem;
   }
 }
