@@ -950,7 +950,7 @@ table td input::placeholder {
     display: block;
     font-size: 1rem;
     color: #fff;
-    background: #000;
+    background: #0b0f12;
     border: none;
     cursor: pointer;
     position: relative;
@@ -972,7 +972,7 @@ table td input::placeholder {
     width: 80%;
     max-width: 320px;
     height: 100%;
-    background-color: #000; /* 🔥 Fondo negro sólido */
+    background-color: #0b0f12; /* 🔥 Fondo negro sólido */
     transition: right 0.3s ease;
     z-index: 7000; /* justo debajo del botón */
     padding-top: 5rem;
