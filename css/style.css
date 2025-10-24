@@ -854,41 +854,43 @@ table td input::placeholder {
     padding: 0.5rem 1rem;
   }
 
-  /* Ocultar botón y menú desplegable por defecto en desktop */
+ /* Por defecto, el botón hamburguesa está oculto en escritorio */
 .menu-toggle {
   display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white; /* o el color que quieras */
 }
 
-/* Móvil: menú desplegable */
-@media (max-width: 899px) {
+/* En móviles, se muestra el botón y se oculta el menú */
+@media screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #fff; /* o rojo si quieres el acento */
   }
 
   .main-nav ul {
-    display: none; /* ocultamos el menú por defecto */
+    display: none;
     flex-direction: column;
-    gap: 0.5rem;
-    background-color: #111; /* fondo menú móvil */
+    gap: 1rem;
+    background-color: #222; /* color de fondo del menú desplegable */
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
+  /* Cuando se agrega la clase show (al pulsar botón) se muestra */
   .main-nav ul.show {
-    display: flex; /* muestra el menú al activar */
+    display: flex;
   }
 
-  .main-nav a {
-    font-size: 1rem;
-    padding: 0.5rem 0;
+  /* Opcional: estilos de los links en móvil */
+  .main-nav ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
   }
 }
 
