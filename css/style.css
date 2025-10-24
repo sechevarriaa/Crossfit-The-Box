@@ -915,7 +915,7 @@ table td input::placeholder {
     left: 0;
     width: 100%;
     padding: 1rem;
-    z-index: 1500; /* menú sobre todo */
+    z-index: 9999 !important; /* 🔥 máxima prioridad */
   }
 
   .main-nav ul.show {
@@ -946,9 +946,7 @@ table {
 table th {
   background-color: #111;
   color: #fff;
-  padding: 0.3rem;
-  text-align: center;
-  background-color: #000;
+  font-weight: 150;
   }
 
 table td {
