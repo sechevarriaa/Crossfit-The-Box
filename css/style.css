@@ -934,5 +934,42 @@ table th {
     font-weight: 700 !important;
   }
 }
+/* ==========================================================
+   ABREVIAR NOMBRES DE CLASES EN MÓVIL (≤480px)
+   ========================================================== */
+@media (max-width: 480px) {
+
+  /* Halt. Gym. Open. Hyrox se muestran abreviados */
+  table td {
+    font-size: 0.45rem !important;   /* letra pequeña legible */
+    white-space: nowrap !important;  
+  }
+
+  table td.halterofilia::after {
+    content: "Halt." !important;
+  }
+
+  table td.gimnastico::after {
+    content: "Gym." !important;
+  }
+
+  table td["open gym"]::after,
+  table td.open-gym::after {
+    content: "Open" !important;
+  }
+
+  table td.hyrox::after {
+    content: "Hyrox" !important; /* se mantiene igual */
+  }
+
+  /* Oculta el texto original de la celda */
+  table td.halterofilia,
+  table td.gimnastico,
+  table td["open gym"],
+  table td.open-gym,
+  table td.hyrox {
+    color: transparent !important;
+  }
+}
 
 
