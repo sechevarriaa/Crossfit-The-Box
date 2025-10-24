@@ -935,41 +935,39 @@ table th {
   }
 }
 /* ==========================================================
-   ABREVIAR NOMBRES DE CLASES EN MÓVIL (≤480px)
+   TABLA / HORARIOS - ABREVIATURAS EN MÓVIL
    ========================================================== */
 @media (max-width: 480px) {
-
-  /* Halt. Gym. Open. Hyrox se muestran abreviados */
-  table td {
-    font-size: 0.45rem !important;   /* letra pequeña legible */
-    white-space: nowrap !important;  
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
   }
 
-  table td.halterofilia::after {
-    content: "Halt." !important;
+  table td input,
+  table th {
+    font-size: 0.45rem !important; /* letra pequeña legible */
+    text-align: center;
+    padding: 0.2rem !important;
   }
 
-  table td.gimnastico::after {
-    content: "Gym." !important;
+  /* Abreviaturas automáticas usando placeholder */
+  td.halterofilia input::placeholder {
+    content: "Halt.";
   }
 
-  table td["open gym"]::after,
-  table td.open-gym::after {
-    content: "Open" !important;
+  td.gimnastico input::placeholder {
+    content: "Gym.";
   }
 
-  table td.hyrox::after {
-    content: "Hyrox" !important; /* se mantiene igual */
+  td.open-gym input::placeholder {
+    content: "Open";
   }
 
-  /* Oculta el texto original de la celda */
-  table td.halterofilia,
-  table td.gimnastico,
-  table td["open gym"],
-  table td.open-gym,
-  table td.hyrox {
-    color: transparent !important;
+  td.hyrox input::placeholder {
+    content: "Hyrox";
   }
 }
+
 
 
