@@ -875,50 +875,34 @@ table td input::placeholder {
 }
 
 /* ==========================================================
-   CORRECCIÓN TABLAS / HORARIOS - MÓVIL (≤480px)
-   Texto siempre visible y legible
+   FIX FINAL TABLA / HORARIOS - MÓVIL PEQUEÑO (≤480px)
    ========================================================== */
 @media (max-width: 480px) {
 
-  /* Contenedor desplazable si la tabla no cabe */
+  /* Permitir scroll si la tabla no cabe */
+  .tabla-horarios,
   table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    border-collapse: collapse;
-    table-layout: fixed !important;  /* columnas proporcionadas */
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Encabezados (días de la semana) */
-  table thead th {
-    font-size: 0.55rem !important;
-    padding: 0.15rem 0.1rem !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
-    white-space: normal !important;  /* permite salto de línea */
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto;                   /* divide palabras largas */
-  }
-
-  /* Celdas del cuerpo */
+  /* Forzar que los encabezados y celdas se adapten */
+  table th,
   table td {
-    font-size: 0.6rem !important;
-    padding: 0.25rem 0.15rem !important;
+    font-size: 0.55rem !important;
+    line-height: 1.2 !important;
+    padding: 0.2rem 0.1rem !important;
     text-align: center !important;
-    white-space: normal !important;  /* texto con saltos de línea */
+    white-space: normal !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
-    line-height: 1.2 !important;
-    vertical-align: middle !important;
+    hyphens: auto !important;
+    max-width: 70px !important;  /* controla el ancho máximo de cada columna */
   }
 
-  /* Ajusta columnas uniformemente */
-  table tr {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
+  table {
+    table-layout: fixed !important;
   }
 }
-
-
