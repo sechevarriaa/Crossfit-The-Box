@@ -875,34 +875,65 @@ table td input::placeholder {
 }
 
 /* ==========================================================
-   FIX FINAL TABLA / HORARIOS - MÓVIL PEQUEÑO (≤480px)
+   TABLA / HORARIOS - Versión Heracrossfit (ajustada a The Box)
    ========================================================== */
-@media (max-width: 480px) {
+.tabla-horarios {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
-  /* Permitir scroll si la tabla no cabe */
-  .tabla-horarios,
-  table {
-    display: block !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* columnas de tamaño uniforme */
+}
+
+table th,
+table td {
+  text-align: center;
+  padding: 0.6rem;
+  border: 1px solid #333;
+  color: #fff;
+  background-color: #111;
+  font-size: 0.9rem;
+  white-space: nowrap; /* no partir palabras */
+}
+
+/* Encabezado */
+table th {
+  background-color: #c00;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ===================== MÓVIL ===================== */
+@media (max-width: 600px) {
+
+  .tabla-horarios {
+    overflow-x: auto;
+    display: block;
   }
 
-  /* Forzar que los encabezados y celdas se adapten */
   table th,
   table td {
-    font-size: 0.55rem !important;
-    line-height: 1.2 !important;
-    padding: 0.2rem 0.1rem !important;
-    text-align: center !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
-    max-width: 70px !important;  /* controla el ancho máximo de cada columna */
+    font-size: 0.55rem;      /* reduce el texto */
+    padding: 0.3rem 0.2rem;  /* menos espacio interno */
+    line-height: 1.2;
   }
 
   table {
-    table-layout: fixed !important;
+    min-width: 550px;        /* fuerza scroll lateral si no cabe */
+  }
+
+  /* Scrollbar personalizado */
+  .tabla-horarios::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .tabla-horarios::-webkit-scrollbar-thumb {
+    background: #c00;
+    border-radius: 3px;
   }
 }
+
